@@ -80,7 +80,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_PROVINCES);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -90,7 +90,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_COMPANY_DATA);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -100,7 +100,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_TRAINEE_ACTIVITY);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -112,7 +112,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_TRAINEE_LIST + classID);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -122,7 +122,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_DATA);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -132,7 +132,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_RATINGS);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length() );
                         }
                         break;
@@ -142,7 +142,7 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_HELPTYPES);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
@@ -152,18 +152,18 @@ public class CacheUtil {
                         write(outputStream, json);
                         file = ctx.getFileStreamPath(JSON_CATEGORIES);
                         if (file != null) {
-                            Log.e(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
+                            Log.w(LOG, "......Data cache json written to disk,  - path: " + file.getAbsolutePath() +
                                     " - length: " + file.length());
                         }
                         break;
                     default:
-                        Log.e(LOG, "######### NOTHING done ...");
+                        Log.w(LOG, "######### NOTHING done ...");
                         break;
 
                 }
 
             } catch (IOException e) {
-                Log.e(LOG, "Failed to cache data", e);
+                Log.w(LOG, "Failed to cache data", e);
             }
             return null;
         }
@@ -233,7 +233,7 @@ public class CacheUtil {
                 }
 
             } catch (IOException e) {
-                Log.e(LOG, "Failed to retrieve cache", e);
+                Log.w(LOG, "Failed to retrieve cache", e);
             }
             return response;
         }
@@ -241,7 +241,7 @@ public class CacheUtil {
         @Override
         protected void onPostExecute(ResponseDTO v) {
             if (v != null) {
-                Log.e(LOG, "$$$$$$$$$$$$ cached data retrieved");
+                Log.d(LOG, "$$$$$$$$$$$$ onPostExecute - cached data retrieved");
             }
             listener.onFileDataDeserialized(v);
         }

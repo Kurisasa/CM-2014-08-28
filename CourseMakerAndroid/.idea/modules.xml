@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" filepath="$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" />
       <module fileurl="file://$PROJECT_DIR$/CMTrainee/CMTrainee.iml" filepath="$PROJECT_DIR$/CMTrainee/CMTrainee.iml" />
       <module fileurl="file://$PROJECT_DIR$/CourseMakerAndroid.iml" filepath="$PROJECT_DIR$/CourseMakerAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EventReporter/EventReporter.iml" filepath="$PROJECT_DIR$/EventReporter/EventReporter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

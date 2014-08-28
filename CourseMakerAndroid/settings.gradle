@@ -1,1 +1,1 @@
-include ':app', ':CMLibrary', ':CMAdmin', ':CMAuthor', ':CMInstructor', ':CMTrainee', ':CMServerProbe'
+include ':app', ':CMLibrary', ':CMAdmin', ':CMAuthor', ':CMInstructor', ':CMTrainee', ':CMServerProbe', ':EventReporter'

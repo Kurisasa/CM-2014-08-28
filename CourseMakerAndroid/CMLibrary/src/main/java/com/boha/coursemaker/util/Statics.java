@@ -26,7 +26,8 @@ public class Statics {
             ADMIN_ENDPOINT = "wsadmin",
             INSTRUCTOR_ENDPOINT = "wsinstructor",
             TRAINEE_ENDPOINT = "wstrainee",
-            TEAM_ENDPOINT = "wsteam";
+            TEAM_ENDPOINT = "wsteam",
+            PLATFORM_ENDPOINT = "wsplatform";
     //
     /**
      * Servlet URL strings

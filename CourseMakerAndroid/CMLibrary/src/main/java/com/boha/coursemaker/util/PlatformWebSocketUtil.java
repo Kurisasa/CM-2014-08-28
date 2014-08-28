@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.boha.coursemaker.dto.RequestDTO;
-import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.dto.StatsResponseDTO;
 import com.google.gson.Gson;
 
 import org.java_websocket.client.WebSocketClient;
@@ -26,9 +26,9 @@ import java.nio.ByteBuffer;
  * Utility class to manage web socket communications for the application
  * Created by aubreyM on 2014/08/10.
  */
-public class WebSocketUtil {
+public class PlatformWebSocketUtil {
     public interface WebSocketListener {
-        public void onMessage(ResponseDTO response);
+        public void onMessage(StatsResponseDTO response);
 
         public void onClose();
 
@@ -48,7 +48,7 @@ public class WebSocketUtil {
         }
     }
 
-
+    
     public static void sendRequest(Context c, final String suffix, RequestDTO req, WebSocketListener listener)  {
         start = System.currentTimeMillis();
         webSocketListener = listener;
@@ -106,7 +106,7 @@ public class WebSocketUtil {
                 Log.i(LOG, "########## onMessage, length: " + response.length()  + " elapsed: " + getElapsed()
                         + "\n" + response);
                 try {
-                    ResponseDTO r = gson.fromJson(response, ResponseDTO.class);
+                    StatsResponseDTO r = gson.fromJson(response, StatsResponseDTO.class);
                     if (r.getStatusCode() == 0) {
                         if (r.getSessionID() != null) {
                             SharedUtil.setSessionID(ctx, r.getSessionID());
@@ -153,7 +153,7 @@ public class WebSocketUtil {
                     //Log.d(LOG, "################ unpacked length: " + unZip.length());
                     if (content != null) {
                         Log.e(LOG, "############# onMessage, unpacked length: " + content.length()  + " elapsed: " + getElapsed());
-                        ResponseDTO response = gson.fromJson(content, ResponseDTO.class);
+                        StatsResponseDTO response = gson.fromJson(content, StatsResponseDTO.class);
                         if (response.getStatusCode() == 0) {
                             webSocketListener.onMessage(response);
                         } else {
@@ -207,7 +207,7 @@ public class WebSocketUtil {
                 Log.i(LOG, "########## onMessage, length: " + response.length()  + " elapsed: " + getElapsed()
                         + "\n" + response);
                 try {
-                    ResponseDTO r = gson.fromJson(response, ResponseDTO.class);
+                    StatsResponseDTO r = gson.fromJson(response, StatsResponseDTO.class);
                     if (r.getStatusCode() == 0) {
                         if (r.getSessionID() != null) {
                             SharedUtil.setSessionID(ctx, r.getSessionID());
@@ -251,7 +251,7 @@ public class WebSocketUtil {
                     //Log.d(LOG, "################ unpacked length: " + unZip.length());
                     if (content != null) {
                         Log.e(LOG, "############# onMessage, unpacked length: " + content.length() + " elapsed: " + getElapsed());
-                        ResponseDTO response = gson.fromJson(content, ResponseDTO.class);
+                        StatsResponseDTO response = gson.fromJson(content, StatsResponseDTO.class);
                         if (response.getStatusCode() == 0) {
                             webSocketListener.onMessage(response);
                         } else {
@@ -287,7 +287,7 @@ public class WebSocketUtil {
     }
 
     static WebSocketClient mWebSocketClient;
-    static final String LOG = WebSocketUtil.class.getName();
+    static final String LOG = PlatformWebSocketUtil.class.getName();
     static final Gson gson = new Gson();
     public static String getElapsed() {
         BigDecimal m = new BigDecimal(end - start).divide(new BigDecimal(1000));

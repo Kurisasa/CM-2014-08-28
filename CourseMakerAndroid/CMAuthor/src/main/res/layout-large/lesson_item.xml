@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_pale"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/LESS_ITEM_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/star_grey_48"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/LESS_ITEM_name"
+            style="@style/TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_toRightOf="@+id/LESS_ITEM_image"
+            android:text="Lesson/Task Name Here"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/LESS_ITEM_priority"
+            style="@style/GreyCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/LESS_ITEM_name"
+            android:layout_toRightOf="@+id/LESS_ITEM_image"
+            android:text="0"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/LP_countsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/LESS_ITEM_desc"
+            android:layout_below="@+id/LESS_ITEM_desc"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/LI_activityCount"
+                style="@style/RedCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="00"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/LI_resourceCount"
+                style="@style/GreenCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/LI_activityCount"
+                android:layout_below="@+id/LI_activityCount"
+                android:layout_marginTop="3dp"
+                android:text="00"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/LI_label2"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LI_resourceCount"
+                android:layout_alignBottom="@+id/LI_resourceCount"
+                android:layout_alignLeft="@+id/LP_label1"
+                android:text="@string/links"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/LP_label1"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/LI_activityCount"
+                android:layout_alignBottom="@+id/LI_activityCount"
+                android:layout_marginRight="31dp"
+                android:layout_toLeftOf="@+id/LI_activityCount"
+                android:text="@string/activities"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LP_countsLayout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp" >
+
+            <TextView
+                android:id="@+id/CRSITEM_btnDown"
+                style="@style/GreyCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow_circle_down16"
+                android:text="@string/down"
+                android:textAlignment="gravity"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/CRSITEM_btnUo"
+                style="@style/GreyCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow_circle_up16"
+                android:text="@string/up"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/LESS_ITEM_desc"
+            style="@style/TextStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/LESS_ITEM_image"
+            android:layout_below="@+id/LESS_ITEM_priority"
+            android:padding="10dp"
+            android:text="Lesson/Task description here and there. Optional, see how many lines this can go on for. Well we might have to use multiple lines then." />
+    </RelativeLayout>
+
+</RelativeLayout>

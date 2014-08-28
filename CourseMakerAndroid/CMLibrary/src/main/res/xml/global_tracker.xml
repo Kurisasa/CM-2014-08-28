@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <integer name="ga_sessionTimeout">300</integer>
+
+    <!-- Enable automatic Activity measurement -->
+    <bool name="ga_autoActivityTracking">true</bool>
+
+    <!-- The screen names that will appear in reports -->
+    <screenName name="com.boha.cmlibrary.fragments.ActivityPageFragment">
+        CourseMaker ActivityPageFragment
+    </screenName>
+    <screenName name="com.boha.cmlibrary.fragments.HelpRequestFragment">
+        CourseMaker HelpRequestFragment
+    </screenName>
+    <!--  The following value should be replaced with correct property id. -->
+    <string name="ga_trackingId">UA-XXXXXXX-Y</string>
+    <bool name="ga_dryRun">false</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <bool name="ga_autoActivityTracking">true</bool>
+    <string name="ga_logLevel">verbose</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:visibility="visible" >
+
+    <TextView
+        android:id="@+id/LSN_priority"
+        style="@style/BlueCountBoxSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero" />
+
+    <TextView
+        android:id="@+id/LSN_name"
+        style="@style/Title3TextStyleBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/LSN_priority"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/LSN_priority"
+        android:hint="@string/lesson" />
+
+    <LinearLayout
+        android:id="@+id/LSN_activitiesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LSN_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:padding="10dp" />
+
+</RelativeLayout>

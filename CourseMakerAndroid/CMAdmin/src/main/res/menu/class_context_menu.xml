@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_trainees"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_trainees">
+    </item>
+    <item
+        android:id="@+id/menu_equipment_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_equipment">
+    </item>
+    <item
+        android:id="@+id/menu_update_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_update_class">
+    </item>
+    <item
+        android:id="@+id/menu_delete_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_delete_class">
+    </item>
+    <item
+        android:id="@+id/menu_deactivate_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_deactivate_class">
+    </item>
+
+</menu>

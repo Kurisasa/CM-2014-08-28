@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TH_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="15dp" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/TH_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" android:scaleType="centerCrop"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/boy" />
+
+    <RelativeLayout
+        android:id="@+id/TH_actLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/TH_image"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/TH_txtTraineeName"
+            style="@style/TextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Trainee Name" />
+
+        <TextView
+            android:id="@+id/TH_txtCourseName"
+            style="@style/TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TH_txtTraineeName"
+            android:layout_below="@id/TH_txtTraineeName"
+            android:layout_marginTop="5dp"
+            android:text="Class Name" />
+
+        <RelativeLayout
+            android:id="@+id/TH_cLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/TH_txtCourseName"
+            android:layout_below="@+id/TH_txtCourseName" >
+
+            <TextView
+                android:id="@+id/TH_txtCompleteLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/completed_overall"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TH_txtPerc"
+                style="@style/Title1TextStyleRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/TH_txtCompleteLabel"
+                android:layout_alignParentRight="true"
+                android:layout_alignRight="@id/TH_txtCompleteLabel"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="0.00%" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

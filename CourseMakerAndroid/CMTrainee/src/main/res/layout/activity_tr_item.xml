@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AR_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:gravity="left|center"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/AR_layoutPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/AR_txtPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="@drawable/xblue_box"
+            android:text="00"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/AR_txtPriorityGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="@drawable/xgreen_box"
+            android:text="00"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/AR_layoutName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/AR_layoutPriority" >
+
+        <TextView
+            android:id="@+id/AR_txtActName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="Name of the Activity"
+            android:textColor="@color/navy_blue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/AR_txtActNameGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="Name of the Activity"
+            android:textColor="@color/green_two"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/AR_txtActDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/AR_layoutName"
+        android:layout_below="@id/AR_layoutName"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="The description of the Activity whicj might be as much as several lines long and so we must be careful to design something that looks the part" />
+
+    <TextView
+        android:id="@+id/AR_completeMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/AR_txtActDesc"
+        android:layout_below="@id/AR_txtActDesc"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:text="Task completed"
+        android:textColor="@color/translucent_red"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/AR_completionDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/AR_completeMsg"
+        android:layout_below="@+id/AR_completeMsg"
+        android:padding="5dp"
+        android:text="Saturday, 9 December 2013"
+        android:textColor="@color/translucent_red"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/AR_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/AR_completionDate"
+        android:layout_below="@+id/AR_completionDate"
+        android:layout_marginTop="5dp"
+        android:gravity="left|center" >
+
+        <TextView
+            android:id="@+id/AR_txtAvgTraineeRatingLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/avg_rating_trainee"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/AR_txtAvgTraineeRating"
+            style="@style/Title3TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/AR_txtAvgTraineeRatingLabel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:text="0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/AR_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/AR_layout3"
+        android:layout_below="@+id/AR_layout3"
+        android:layout_marginTop="5dp"
+        android:gravity="left|center" >
+
+        <TextView
+            android:id="@+id/AR_txtAvgInsRatingLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/avg_rating_instr"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/AR_txtAvgInsRating"
+            style="@style/Title3TextStyleRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/AR_txtAvgInsRatingLabel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:text="0" />
+    </RelativeLayout>
+
+</RelativeLayout>

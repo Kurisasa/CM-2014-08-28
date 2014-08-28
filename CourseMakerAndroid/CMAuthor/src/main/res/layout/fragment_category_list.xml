@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/CAT_layouta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/blue_dark1"
+        android:orientation="vertical"
+         >
+
+        <TextView
+            android:id="@+id/CAT_author"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:textSize="20sp"
+            android:text="Author Full Name"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/CAT_company"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:text="Company Name"
+            android:textColor="@color/white" />
+        <RelativeLayout
+            android:id="@+id/LH_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/LH_label"
+                style="@style/Title2TextStyleBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/category_list"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LH_count"
+                style="@style/RedCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00" android:gravity="center"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CAT_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CAT_layouta"
+        android:background="@color/beige_pale"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/CRS_label2"
+                style="@style/Title3TextStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="@string/add_category"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/CRS_btnImport"
+                android:text="@string/import_category"
+                android:layout_width="match_parent"
+                android:layout_below="@id/CRS_label2"
+                android:layout_marginTop="15dp"
+                android:drawableLeft="@drawable/ic_action_search"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/CAT_categoryName"
+            android:layout_width="match_parent" android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_category_label"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/CAT_btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/cancel_32" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="10dp"
+                android:layout_below="@id/CAT_layout1" />
+
+            <Button
+                android:id="@+id/CAT_btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawableLeft="@drawable/ic_action_upload"
+                android:text="@string/save" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <ListView
+        android:id="@+id/CAT_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/CAT_layout1"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        android:dividerHeight="5dp" />
+
+</RelativeLayout>

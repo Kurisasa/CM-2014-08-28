@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_add_activity"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_new"
+        android:title="@string/add_activity"/>
+    <item
+        android:id="@+id/menu_back"
+        android:orderInCategory="100"
+        android:icon="@drawable/back_vector32"
+        android:showAsAction="always"
+        android:title="@string/back"/>
+
+</menu>

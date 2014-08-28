@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:paddingBottom="15dp" >
+
+    <ImageView
+        android:id="@+id/COM_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="5dp"
+        android:src="@drawable/ball" />
+
+    <RelativeLayout
+        android:id="@+id/COM_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/COM_image"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/COM_companyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="CompanyName Here"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/COM_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/COM_companyName"
+            android:layout_marginRight="5dp"
+            android:text="Wed 32 Decemeber 2014 10:33:24"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/COM_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/COM_layout1"
+        android:layout_below="@id/COM_layout1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/xborder"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/COM_adminLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/number_admins"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/COM_admins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/COM_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/COM_layout2"
+        android:layout_below="@id/COM_layout2"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/xborder"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/COM_authLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/number_authors"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/COM_authors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="00"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <!-- jj -->
+
+    <RelativeLayout
+        android:id="@+id/COM_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/COM_layout3"
+        android:layout_below="@id/COM_layout3"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/xborder"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/COM_insLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/number_instructors"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/COM_instructors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/COM_layout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/COM_layout4"
+        android:layout_below="@id/COM_layout4"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/xborder"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/COM_trLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/number_trainees"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/COM_trainees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="00"
+            android:textColor="@color/translucent_red"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

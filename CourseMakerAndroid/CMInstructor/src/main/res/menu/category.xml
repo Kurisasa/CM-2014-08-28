@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_back"
+        android:orderInCategory="100"
+        android:icon="@drawable/back_vector32"
+        android:showAsAction="ifRoom"
+        android:title="@string/back"/>
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_action_edit"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/profile"/>
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/refresh"/>
+
+</menu>

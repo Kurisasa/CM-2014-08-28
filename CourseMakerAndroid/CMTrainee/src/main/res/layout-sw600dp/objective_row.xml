@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/OR_txtPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xbluelight_rounded_corners"
+        android:text="33"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/OR_txtObjName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Name of the Objective" />
+
+</TableRow>

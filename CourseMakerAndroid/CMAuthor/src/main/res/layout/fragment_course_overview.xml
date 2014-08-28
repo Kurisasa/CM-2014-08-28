@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/CRS_layoutx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/CRS_categoryLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/CRS_category"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Category Name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CRS_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/CRS_layoutx"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="visible" >
+    </LinearLayout>
+
+</RelativeLayout>

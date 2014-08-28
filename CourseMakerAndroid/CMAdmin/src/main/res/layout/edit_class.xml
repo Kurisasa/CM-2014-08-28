@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/EC_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/beige_pale"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/EC_txtHdr"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="Register New Class" />
+
+        <EditText
+            android:id="@+id/EC_className"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EC_txtHdr"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:ems="25"
+            android:hint="@string/enter_class_name"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <RelativeLayout
+            android:id="@+id/EC_startLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EC_className"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <TextView
+                android:id="@+id/EC_txtStartLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/admin_start_date"
+                android:layout_centerVertical="true"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/EC_txtStart"
+                style="@style/TextStyleGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/EC_txtStartLabel"
+                android:text="Wednesday 30 November 2014" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/EC_endLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EC_startLayout"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <TextView
+                android:id="@+id/EC_txtEndLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/admin_end_date"
+                android:layout_centerVertical="true"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/EC_txtEnd"
+                style="@style/TextStyleBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/EC_txtEndLabel"
+                android:text="Wednesday 30 November 2014" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/EC_endLayout"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/EC_btnCancel"
+                style="@style/ButtonCancelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/EC_btnSave"
+                style="@style/ButtonNavyBlueSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/save" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="15dp" >
+
+    <ImageView
+        android:id="@+id/CRSITEM_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="2dp"
+        android:src="@drawable/course_48"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/CRSITEM_priority"
+        style="@style/GreyCountBoxSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_name"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/CRSITEM_name"
+        style="@style/TextStyleBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_image"
+        android:layout_toRightOf="@+id/CRSITEM_priority"
+        android:padding="5dp"
+        android:text="Course Name Here"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CRSITEM_count"
+        style="@style/RedCountBoxSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/CRSITEM_desc"
+        android:layout_below="@+id/CRSITEM_name"
+        android:background="@drawable/xgreen_box"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        style="@style/TextStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/CRSITEM_count"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:text="Course description here and there" />
+
+</RelativeLayout>

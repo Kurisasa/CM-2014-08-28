@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:id="@+id/CRS_layoutx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/CRS_categoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Category :"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/CRS_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Category Name"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/CRS_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CRS_layoutx"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xgrey_white_rounded_corners"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/add_48" />
+
+                <TextView
+                    android:id="@+id/CRS_label2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="20dp"
+                    android:text="@string/add_lesson"
+                    android:textColor="@color/translucent_red"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/CRS_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_lesson_name"
+                android:inputType="textCapSentences"
+                android:padding="20dp" />
+
+            <EditText
+                android:id="@+id/CRS_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_lesson_desc"
+                android:inputType="textMultiLine"
+                android:padding="20dp" />
+
+            <LinearLayout
+                style="@android:style/ButtonBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp" >
+
+                <Button
+                    android:id="@+id/CRS_btnCancel"
+                    style="?android:attr/buttonBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/cancel" />
+
+                <Button
+                    android:id="@+id/CRS_btnSave"
+                    style="?android:attr/buttonBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="15dp"
+                    android:text="@string/save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/CRS_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/CRS_courseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Course :"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/CRS_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Course Name here ..."
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/LH_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CRS_listView"
+        android:layout_below="@+id/CRS_layout1"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/LH_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/lesson_list"
+            android:textColor="@color/grey"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/LH_count"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/xblack_rounded_corners"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/LH_progress"
+            style="@android:style/Widget.ProgressBar.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/LH_label"
+            android:layout_marginRight="29dp"
+            android:layout_toLeftOf="@+id/LH_count"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/CRS_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LH_layout" />
+
+</RelativeLayout>

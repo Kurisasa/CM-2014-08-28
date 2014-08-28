@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TR_ITEM_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="2dp" >
+
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout0a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:padding="5dp" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/TR_ITEM_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp" android:scaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/boy" />
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtName"
+            style="@style/Title3TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/TR_ITEM_image"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/TR_ITEM_image"
+            android:text="Author name" />
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_txtName"
+            android:layout_below="@+id/TR_ITEM_txtName"
+            >
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtEmail"
+                style="@style/TextStyleSmall"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="email address" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout1a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_layout1"
+            android:layout_below="@+id/TR_ITEM_layout1"
+            android:padding="5dp"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/TR_ITEM_classesLabel"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/courses_authored"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/TR_ITEM_courseCount"
+                style="@style/GreenCountBoxSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="00"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_layout1a"
+            android:layout_below="@+id/TR_ITEM_layout1a"
+             >
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtCity"
+                style="@style/Title3TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="city" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/TR_ITEM_image"
+            android:layout_below="@id/TR_ITEM_image"
+            android:padding="5dp"
+            android:text="class"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

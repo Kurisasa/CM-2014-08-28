@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/LOG_topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/LOG_title"
+            style="@style/Title2TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:text="CourseMaker Server Log" />
+
+        <RelativeLayout
+            android:id="@+id/LOG_dateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LOG_title"
+            android:background="@color/blue_pale"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/LOG_dateLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Log Date"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LOG_date"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:text="16 February 2014 16:45"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/LOG_dataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LOG_dateLayout"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/LOG_sizeLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Logfile Size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LOG_size"
+                style="@style/RedCountBoxSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:text="00" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/LOG_elapsedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LOG_dataLayout"
+            android:background="@drawable/xbeige_pale_corners"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/LOG_elapsedLabel"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Time Elapsed(seconds)"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LOG_elapsed"
+                style="@style/GreenCountBoxSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:text="00" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/xwhite_rounded_corners" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/LOG_logTxt"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="Text from inside the large CourseMaker log file that has been downloaded from the server in zipped format."
+                android:textSize="11dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

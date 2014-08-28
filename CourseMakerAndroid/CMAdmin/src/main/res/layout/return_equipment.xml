@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RE_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xbeige_pale_corners"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/RE_txtName"
+        style="@style/TextStyleBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trainee Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/RE_txInstruction"
+        style="@style/MediumTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/return_equipment"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xborder_rounded"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <com.boha.coursemaker.base.PaddedRadioButton
+            android:id="@+id/RE_radioOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ok" />
+
+        <com.boha.coursemaker.base.PaddedRadioButton
+            android:id="@+id/RE_radioBroken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/broken" />
+
+        <com.boha.coursemaker.base.PaddedRadioButton
+            android:id="@+id/RE_radioLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/lost" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/RE_btnCancel"
+            style="@style/ButtonCancelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/RE_btnSave"
+            style="@style/ButtonSaveSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/save" />
+    </LinearLayout>
+
+</LinearLayout>

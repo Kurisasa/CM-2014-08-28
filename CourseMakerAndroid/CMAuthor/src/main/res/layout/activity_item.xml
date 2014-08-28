@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp" >
+
+    <RelativeLayout  android:id="@+id/CRSITEM_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/CRSITEM_priority"
+            android:background="@drawable/xred_oval"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@+id/CRSITEM_name"
+            android:text="0" android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/CRSITEM_name"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/CRSITEM_priority"
+            android:text="Activity Name Here" />
+
+
+
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CRSITEM_top"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="48dp"
+        android:text="Activity description here and there"
+        android:textSize="14sp" />
+
+</RelativeLayout>

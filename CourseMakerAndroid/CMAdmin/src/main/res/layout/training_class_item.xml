@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey2"
+                android:padding="2dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:padding="10dp">
+
+        <ImageView
+                android:id="@+id/TC_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:src="@drawable/ball"/>
+
+        <TextView
+                android:id="@+id/TC_className"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/TC_image"
+                android:text="Class Name Here"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <RelativeLayout
+                android:id="@+id/TC_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/TC_className"
+                android:layout_below="@id/TC_className">
+
+            <TextView
+                    android:id="@+id/TC_label1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/admin_start_date"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/TC_startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/TC_label1"
+                    android:layout_alignBottom="@+id/TC_label1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:text="Wednesday, November 1st 2013"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    android:textStyle="normal"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/TC_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/TC_layout1"
+                android:layout_below="@id/TC_layout1">
+
+            <TextView
+                    android:id="@+id/TC_label2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/admin_end_date"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/TC_endDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:text="Monday, December 25th 2013"
+                    android:textSize="12sp"
+                    android:textStyle="normal"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/TC_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/TC_layout2"
+                android:layout_below="@id/TC_layout2">
+
+            <TextView
+                    android:id="@+id/TC_label3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/admin_label_short"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/TC_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/TC_label3"
+                    android:layout_alignBottom="@+id/TC_label3"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:text="Administrator Name"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/TC_layout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" android:padding="5dp"
+                android:layout_alignLeft="@id/TC_layout3"
+                android:layout_below="@id/TC_layout3">
+
+
+            <TextView
+                    android:id="@+id/TC_traineesEnrolled"
+                    style="@style/RedCountBoxSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+
+                    android:text="0"/>
+
+            <TextView
+                    android:id="@+id/TC_label3ba"
+                    style="@style/TextStyleGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:layout_toLeftOf="@id/TC_traineesEnrolled"
+                    android:text="@string/trainees_enrolled"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/TC_layout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@id/TC_layout4"
+                android:layout_below="@id/TC_layout4">
+
+
+            <TextView
+                    android:id="@+id/TC_coursesenrolled"
+                    style="@style/GreenCountBoxSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:text="0"/>
+
+            <TextView
+                    android:id="@+id/TC_label3b"
+                    style="@style/TextStyleGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_toLeftOf="@id/TC_coursesenrolled"
+                    android:text="@string/courses_enrolled"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

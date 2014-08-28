@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:id="@+id/LKP_mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/LKP_header"
+            style="@style/Title3TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/rating" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp" />
+
+        <EditText
+            android:id="@+id/LKP_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_name"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/LKP_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_number"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textColor="@color/navy_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/LKP_btnCancel"
+                style="@style/ButtonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/LKP_btnSave"
+                style="@style/ButtonNavyBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="5dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp" />
+
+    <ListView
+        android:id="@+id/LKP_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp" >
+    </ListView>
+
+</LinearLayout>

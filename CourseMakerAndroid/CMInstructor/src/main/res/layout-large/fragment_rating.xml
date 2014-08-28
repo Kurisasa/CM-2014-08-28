@@ -1,0 +1,193 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="10dp"
+    tools:context=".RatingActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:padding="15dp" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/RAT_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true" />
+
+        <RelativeLayout
+            android:id="@+id/RAT_layout0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/RAT_image"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/RAT_txtTrainee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Trainee Name"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/RAT_txtCourseName"
+                style="@style/Title2TextStyleBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RAT_txtTrainee"
+                android:padding="5dp"
+                android:text="Course Name" />
+
+            <TextView
+                android:id="@+id/RAT_txtActivityName"
+                style="@style/TextStyleBlue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RAT_txtCourseName"
+                android:padding="5dp"
+                android:text="Activity Name" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RAT_layoutC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_image"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/RAT_completeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/completed"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/RAT_txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="Monday, 14 November 2058"
+                android:textColor="@color/green_two"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/RAT_instruction"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_layoutC"
+            android:layout_marginTop="30dp"
+            android:text="@string/rating_instructor_note" />
+
+        <TextView
+            android:id="@+id/RAT_spinnerRatingLabel"
+            style="@style/Title2TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_instruction"
+            android:text="@string/instructor_rating_label" />
+
+        <LinearLayout
+            android:id="@+id/RAT_layoutR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_spinnerRatingLabel"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <Spinner
+                android:id="@+id/RAT_ratingSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/RAT_radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_layoutR"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:showDividers="middle" >
+
+            <com.boha.coursemaker.base.PaddedRadioButton
+                android:id="@+id/RAT_radioComplete"
+                style="@style/Title1TextStyleGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:padding="10dp"
+                android:text="@string/complete_msg" />
+
+            <com.boha.coursemaker.base.PaddedRadioButton
+                android:id="@+id/RAT_radioIncomplete"
+                style="@style/Title1TextStyleRed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:padding="10dp"
+                android:text="@string/task_incomplete" >
+            </com.boha.coursemaker.base.PaddedRadioButton>
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/RAT_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/RAT_radioGroup"
+            android:layout_marginTop="20dp"
+            android:hint="@string/enter_comment"
+            android:imeOptions="actionDone"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/RAT_btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/RAT_comment"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/RAT_btnCancel"
+                style="@style/ButtonCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:drawableLeft="@android:drawable/ic_delete"
+                android:text="@string/cancel"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/RAT_btnSubmit"
+                style="@style/ButtonNavyBlue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableLeft="@android:drawable/ic_menu_send"
+                android:padding="5dp"
+                android:text="@string/submit_rating" >
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

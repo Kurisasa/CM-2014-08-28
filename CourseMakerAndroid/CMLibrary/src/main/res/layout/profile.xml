@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="0dp">
+
+        <ImageView
+            android:id="@+id/PROF_image"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/boy" />
+
+        <include layout="@layout/profile_template"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            android:layout_below="@id/PROF_image"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>

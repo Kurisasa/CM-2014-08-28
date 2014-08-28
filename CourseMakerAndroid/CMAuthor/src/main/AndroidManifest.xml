@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.boha.cmauthor"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.boha.cmauthor.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.boha.cmauthor.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="com.boha.cmlibrary.CMApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ball"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!-- Google Analytics Version v4 needs this value for easy tracking -->
+        <meta-data android:name="com.google.android.gms.analytics.globalConfigResource"
+        android:resource="@xml/global_tracker" />
+
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CourseActivity"
+            android:label="@string/course_list_header"
+            android:parentActivityName=".CategoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".MoreInfoActivity"
+            android:label="@string/info"
+            android:parentActivityName=".CategoryActivity"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:parentActivityName=".ActivitiesAndLinksPager"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StuffPagerActivity" />
+        </activity>
+        <activity
+            android:name="com.boha.cmlibrary.CourseOverviewActivity"
+            android:label="@string/title_activity_course_overview"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".CategoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".ActivitiesAndLinksPager"
+            android:label="@string/title_activity_lessons_stuff"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".LessonHelpActivity"
+            android:label="@string/title_activity_lesson_help"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.boha.cmauthor" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GcmIntentService" />
+
+        <activity
+            android:name="com.boha.cmlibrary.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".CourseOverviewPagerActivity"
+            android:label="@string/category_overview"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".ImportActivity"
+            android:label="@string/title_activity_import"></activity>
+    </application>
+
+</manifest>

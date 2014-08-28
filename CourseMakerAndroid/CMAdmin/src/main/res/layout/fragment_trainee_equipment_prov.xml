@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/TREQ_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/trainee_equipment"
+                android:textSize="18sp" android:visibility="gone"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TREQ_inventoryName"
+                style="@style/Title3TextStyleBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/TREQ_header"
+                android:layout_marginTop="5dp"
+                android:text="Samsung Galaxy Tab 7" />
+
+            <TextView
+                android:id="@+id/TREQ_serial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/TREQ_inventoryName"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/TREQ_inventoryName"
+                android:text="56t65TXDC566T"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/TREQ_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_class_and_trainee"
+            android:textColor="@color/grey2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/TREQ_spinnerClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/TREQ_spinnerTrainee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <Button
+            android:id="@+id/TREQ_btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xbluelight_rounded_corners"
+            android:text="@string/assign_equipment"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <include layout="@layout/return_equipment" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/TREQ_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/device_history"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TREQ_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/xblue_box"
+                android:text="00" android:gravity="center"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/TREQ_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>

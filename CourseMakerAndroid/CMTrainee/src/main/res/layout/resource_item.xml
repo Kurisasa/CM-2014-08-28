@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="5dp" >
+    <ImageView
+        android:id="@+id/CRSITEM_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:src="@drawable/web48" />
+    <TextView
+        android:id="@+id/CRSITEM_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_image"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:padding="5dp"
+        android:text="resource title Here but what if the tiyle is very very long and takes itds time telling you something"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/CRSITEM_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CRSITEM_name"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:padding="5dp"
+        android:text="http://amazon.com.aws/self/help/understanding/really/happens/sometimes/when/"
+        android:textColor="@color/navy_blue"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/grey"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/IMP_topLayout"
+        android:background="@color/beige_pale"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/IMP_image"
+            android:src="@drawable/ic_action_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/IMP_title"
+            android:text="@string/import_course"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/IMP_image"
+            android:layout_marginLeft="10dp"
+            style="@style/Title2TextStyleBlack"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/IMP_fileSpinner"
+            android:layout_below="@id/IMP_title"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/IMP_btnImport"
+            android:text="Import"
+            android:enabled="false"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/IMP_fileSpinner"
+            android:drawableLeft="@drawable/ic_action_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/IMP_countLayout"
+        android:layout_below="@id/IMP_topLayout"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/IMP_countLabel"
+            style="@style/Title2TextStyleGrey"
+            android:textColor="@color/grey2"
+            android:layout_centerVertical="true"
+            android:text="Training Units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/IMP_count"
+            style="@style/Title2TextStyleBlue"
+            android:text="@string/zero"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/IMP_countLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/IMP_list"
+        android:layout_below="@id/IMP_countLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

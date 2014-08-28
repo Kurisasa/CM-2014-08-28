@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/TMM_joinLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xbeige_pale_corners"
+        android:gravity="center"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/TMM_joinLabel"
+            style="@style/TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/join_team"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/TMM_btnSave"
+            style="@style/ButtonRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TMM_joinLabel"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/join_team"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TMM_classmateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TMM_joinLayout"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/TMM_txt"
+            style="@style/TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_team_member"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+                android:id="@+id/TMM_txtCount"
+                style="@style/RedCountBoxSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/zero_zero"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+               />
+
+        <Spinner
+            android:id="@+id/TMM_spinner"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/TMM_txt"
+            android:text="@string/team_member_list" />
+
+        <Button
+            android:id="@+id/TMM_btnAdd"
+            style="@style/ButtonNavyBlueSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/TMM_spinner"
+            android:layout_marginRight="5dp" android:layout_marginTop="10dp"
+            android:text="@string/add_team_member"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+
+    <ListView
+        android:id="@+id/TMM_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/TMM_classmateLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+</RelativeLayout>

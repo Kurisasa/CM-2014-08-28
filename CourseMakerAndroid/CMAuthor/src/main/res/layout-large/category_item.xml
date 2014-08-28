@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/CATITEM_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:src="@drawable/folder_48" />
+
+    <TextView
+        android:id="@+id/CATITEM_categoryName"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/CATITEM_image"
+        android:padding="5dp"
+        android:text="Category Name Here" />
+
+    <TextView
+        android:id="@+id/CATITEM_countLabel"
+        style="@style/TextStyleGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/CATITEM_categoryName"
+        android:layout_marginRight="60dp"
+        android:text="@string/courses_authored"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CATITEM_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/CATITEM_countLabel"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/CATITEM_categoryName"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/xbluelight_rounded_corners"
+        android:text="@string/zero"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

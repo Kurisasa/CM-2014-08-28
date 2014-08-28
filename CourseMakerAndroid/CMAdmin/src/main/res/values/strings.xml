@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CMAdmin</string>
+    <string name="save">Save Data</string>
+    <string name="admin_add_equipment">Add Equipment</string>
+    <string name="admin_delete_equipment">Delete Equipment</string>
+    <string name="admin_equipment_label">Enter Equipment Name</string>
+    <string name="admin_equipment_list">Equipment List</string>
+    <string name="admin_trainee_equipment">Trainee Equipment</string>
+    <string name="admin_give_trainee_equipment">Hand Out Trainee Equipment</string>
+    <string name="admin_list_inventory">List Inventory</string>
+    <string name="admin_update_equipment">Update Equipment</string>
+    <string name="admin_add_class">Add Class</string>
+    <string name="new_thing">New</string>
+    <string name="admin_more_info">More Information</string>
+    <string name="admin_enroll_trainee">Enroll Trainees in Class</string>
+    <string name="title_activity_more_info">MoreInfoActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="people_editor">CourseMaker People</string>
+    <string name="admin_class_list">Class/Team List</string>
+    <string name="admin_start_date">Start Date</string>
+    <string name="admin_end_date">End Date</string>
+    <string name="admin_save">Save</string>
+    <string name="admin_cancel">Cancel</string>
+    <string name="admin_number_items">Number of Items</string>
+    <string name="admin_label">Class Administrator</string>
+    <string name="admin_label_short">Admin</string>
+    <string name="courses_enrolled">Courses Enrolled</string>
+    <string name="trainees_enrolled">Trainees Enrolled</string>
+    <string name="admin_powered">Powered by The Innovation Hub and mLab</string>
+    <string name="title_activity_main_with_drawer">MainWithDrawerActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+    <string name="title_activity_trainee_equipment">TraineeEquipmentActivity</string>
+    <string name="title_activity_instructor_class">InstructorClassActivity</string>
+    <string name="title_activity_lookup">LookupActivity</string>
+    <string name="title_activity_class_trainee_list">ClassTraineeListActivity</string>
+
+</resources>

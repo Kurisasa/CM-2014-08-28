@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_takepic_trainee"
+        android:icon="@drawable/tick_32"
+        android:showAsAction="ifRoom"
+        android:title="@string/take_pic">
+    </item>
+    <item
+        android:id="@+id/menu_equipment_trainee"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_equipment">
+    </item>
+    <item
+        android:id="@+id/menu_update_trainee"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_update_trainee">
+    </item>
+    <item
+        android:id="@+id/menu_delete_trainee"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_delete_trainee">
+    </item>
+    <item
+        android:id="@+id/menu_trainee_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/trainee_class">
+    </item>
+    <item
+        android:id="@+id/menu_send_trainee_password"
+        android:showAsAction="ifRoom"
+        android:title="@string/send_trainee_pswd">
+    </item>
+
+</menu>

@@ -1,0 +1,67 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        tools:context=".RegistrationActivity" >
+
+        <TextView
+            style="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/label_welcome"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/REG_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/enter_pswd_from_mail"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/REG_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <Button
+                android:id="@+id/REG_btnSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xdarkblue_rounded_corners"
+                android:padding="20dp"
+                android:text="@string/label_signin"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/xbeige_pale_corners"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/CRSITEM_priority"
+            style="@style/GreyCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/CRSITEM_name"
+            android:text="0"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/CRSITEM_name"
+            style="@style/Title3TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/CRSITEM_priority"
+            android:text="Activity Name Here" />
+
+        <TextView
+            android:id="@+id/CRSITEM_desc"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/CRSITEM_name"
+            android:layout_below="@+id/CRSITEM_name"
+            android:padding="5dp"
+            android:text="Activity description here and there"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CRSITEM_desc"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp" >
+
+            <TextView
+                android:id="@+id/CRSITEM_btnDown"
+                style="@style/GreyCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow_circle_down16"
+                android:text="@string/down"
+                android:textAlignment="gravity"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/CRSITEM_btnUo"
+                style="@style/GreyCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:drawableRight="@drawable/arrow_circle_up16"
+                android:text="@string/up"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

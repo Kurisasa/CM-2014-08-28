@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    package="com.boha.cmadmin"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.boha.cmadmin.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.boha.cmadmin.gcm.permission.C2D_MESSAGE" />
+    <!-- 552640311522 -->
+
+    <application
+        android:name="com.boha.cmlibrary.CMApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ball"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light"
+         >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.apps.drive.APP_ID"
+            android:value="id=624485365788" />
+
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MoreInfoActivity"
+            android:label="@string/title_activity_more_info"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.boha.cmadmin" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GcmIntentService" />
+
+        <activity
+            android:name=".MainPagerActivity"
+            android:label="@string/administrator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".InventoryPagerActivity"
+            android:label="@string/administrator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".TraineeEquipmentActivity"
+            android:label="@string/administrator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".InstructorClassActivity"
+            android:label="@string/title_activity_instructor_class"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".LookupActivity"
+            android:label="@string/title_activity_lookup"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.boha.cmlibrary.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".ClassTraineeListActivity"
+            android:label="@string/title_activity_class_trainee_list"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+
+</manifest>

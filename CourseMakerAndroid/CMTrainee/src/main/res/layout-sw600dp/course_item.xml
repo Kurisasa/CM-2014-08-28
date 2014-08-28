@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/CRSITEM_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="2dp"
+        android:src="@drawable/course_48"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/CRSITEM_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/CRSITEM_name"
+        android:layout_alignBottom="@+id/CRSITEM_name"
+        android:layout_alignRight="@+id/CRSITEM_desc"
+        android:background="@drawable/xdarkblue_rounded_corners"
+        android:text="00"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CRSITEM_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_name"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:background="@drawable/xgrey_box"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CRSITEM_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_image"
+        android:layout_toRightOf="@+id/CRSITEM_priority"
+        android:padding="10dp"
+        android:text="Course Name Here"
+        android:textColor="@color/green_two"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/CRSITEM_priority"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="Course description here and there"
+        android:textSize="18sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/EC_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/REG_header"
+                style="@style/Title3TextStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/trainee" />
+
+            <ProgressBar
+                android:id="@+id/REG_progress"
+                style="@android:style/Widget.ProgressBar.Small.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/REG_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_firstname"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/REG_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_lastname"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/REG_cellphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_cellphone"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/REG_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_email"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:padding="5dp" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="15dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_pale"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <com.boha.coursemaker.base.PaddedRadioButton
+                android:id="@+id/REG_radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/female" />
+
+            <com.boha.coursemaker.base.PaddedRadioButton
+                android:id="@+id/REG_radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/male" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/REG_spinnerClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/REG_spinnerProvince"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/REG_spinnerCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/EC_btnCancel"
+                style="@style/ButtonCancelSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/EC_btnSave"
+                style="@style/ButtonNavyBlueSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/save" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+    </LinearLayout>
+
+</ScrollView>

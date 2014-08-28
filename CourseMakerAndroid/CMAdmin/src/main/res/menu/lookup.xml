@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/menu_rating"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/tick_32"
+        android:title="@string/rating_types"/>
+    <item
+        android:id="@+id/menu_helptype"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_action_person"
+        android:showAsAction="ifRoom"
+        android:title="@string/help_types"/>
+    <item
+        android:id="@+id/menu_info"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/info"/>
+
+</menu>

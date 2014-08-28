@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/LAND_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/admin_powered"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LAND_topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:padding="15dp" >
+
+                <ImageView
+                    android:id="@+id/LAND_logo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/mlab" />
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/LAND_companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="CompanyName Here"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/LAND_admin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Administrator"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/LAND_editClassLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone" >
+
+                <EditText
+                    android:id="@+id/EC_className"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="className"
+                    android:inputType="textCapWords"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/EC_txtStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/admin_start_date"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <DatePicker
+                    android:id="@+id/EC_datePickerStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/EC_txtEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/admin_end_date"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <DatePicker
+                    android:id="@+id/EC_datePickerEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" />
+
+                <LinearLayout
+                    style="@android:style/ButtonBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp" >
+
+                    <Button
+                        android:id="@+id/EC_btnCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="15dp"
+                        android:text="@string/admin_cancel" />
+
+                    <Button
+                        android:id="@+id/EC_btnSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="15dp"
+                        android:text="@string/admin_save" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/LAND_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LAND_scroll"
+        android:padding="10dp"
+        android:text="@string/admin_class_list"
+        android:textColor="@color/grey"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/LAND_classList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LAND_label" >
+    </ListView>
+
+</RelativeLayout>

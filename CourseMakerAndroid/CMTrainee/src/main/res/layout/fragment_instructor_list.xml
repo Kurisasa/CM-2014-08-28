@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/CLS_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xbeige_pale_corners"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/CLS_label0"
+            style="@style/TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/send_instructor_msg"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/CLS_helpTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CLS_label0"
+            android:text="@string/instructor_list" />
+
+        <EditText
+            android:id="@+id/CLS_editComment"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CLS_helpTypeSpinner"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/enter_comment"
+            android:imeOptions="actionDone" />
+
+        <Button
+            android:id="@+id/CLS_btnSend"
+            style="@style/ButtonRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/CLS_editComment"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/send_message" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CLS_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CLS_layout0"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/CLS_label"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/instructor_list" />
+
+        <TextView
+            android:id="@+id/CLS_count"
+            style="@style/BlueCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="0" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/CLS_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/CLS_layout1"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey" />
+
+</RelativeLayout>

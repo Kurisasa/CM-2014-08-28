@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/EVTLIST_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    <TextView
+        android:id="@+id/EVTLIST_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_grey_gradient"
+        android:padding="5dip"
+        android:text="CalendarTitle:"
+        android:textColor="@color/blue"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/EVTLIST_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_beige_rounded_corners"
+        android:text="Calendar Description"
+        android:textColor="@color/blue_dark1"
+        android:visibility="gone" />
+    <!-- Calendar Event List from server -->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dip" />
+</LinearLayout>

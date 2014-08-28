@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TR_ITEM_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="2dp" >
+
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layoutx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/TR_ITEM_image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/boy" />
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtName"
+            style="@style/Title2TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/TR_ITEM_image"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/TR_ITEM_image"
+            android:text="Trainee name" />
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_txtName"
+            android:layout_below="@+id/TR_ITEM_txtName"
+            android:background="@color/blue_pale" >
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="email address"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_layout1"
+            android:layout_below="@+id/TR_ITEM_layout1"
+            android:background="@color/blue_pale" >
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="gender"
+                android:textColor="@color/blue"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/TR_ITEM_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TR_ITEM_layout2"
+            android:layout_below="@+id/TR_ITEM_layout2"
+            android:background="@color/blue_pale" >
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="city"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtClass"
+            style="@style/TextStyleBoldSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/TR_ITEM_layout3"
+            android:padding="5dp"
+            android:text="class"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

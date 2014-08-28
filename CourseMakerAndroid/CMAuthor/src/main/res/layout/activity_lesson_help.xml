@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LessonHelpActivity" >
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/banner" />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:padding="20dp"
+        android:text="Help on Tasks and Lessons, under construction!"
+        android:textColor="@color/absa_red"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="102dp"
+        android:text="To use snazzy html layouts in a webview to help the author with information about the Task/Lesson structure and navigation through the lesson and activities screens."
+        android:textColor="@color/navy_blue"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

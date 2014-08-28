@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_takepic_admin"
+        android:icon="@drawable/tick_32"
+        android:showAsAction="ifRoom"
+        android:title="@string/take_pic">
+    </item>
+    <item
+        android:id="@+id/menu_update_admin"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_update_admin">
+    </item>
+    <item
+        android:id="@+id/menu_delete_admin"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_delete_admin">
+    </item>
+    <item
+        android:id="@+id/menu_send_admin_password"
+        android:showAsAction="ifRoom"
+        android:title="@string/send_admin_pswd">
+    </item>
+
+</menu>

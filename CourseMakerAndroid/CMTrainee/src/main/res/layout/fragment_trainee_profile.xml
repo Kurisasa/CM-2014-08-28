@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/PROF_image"
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_gold" />
+
+        <RelativeLayout
+            android:layout_below="@id/PROF_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/person_edit" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

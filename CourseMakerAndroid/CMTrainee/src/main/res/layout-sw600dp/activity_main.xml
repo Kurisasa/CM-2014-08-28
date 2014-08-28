@@ -1,0 +1,245 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/MAIN_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        tools:context=".MajorDomoActivity" >
+
+        <ImageView
+            android:id="@+id/MAIN_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:src="@drawable/banner" />
+
+        <LinearLayout
+            android:id="@+id/MAIN_topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_banner"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingTop="20dp" >
+
+            <TextView
+                android:id="@+id/MAIN_traineeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/trainee"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_trainee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/xgrey_white_gradient"
+                android:padding="5dp"
+                android:text="Trainee Name"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MAIN_classLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_topLayout"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/MAIN_classLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/training_class"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="TrainingClass Name"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/MAIN_banner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MAIN_classLayout"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ball" />
+
+        <LinearLayout
+            android:id="@+id/MAIN_courseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_banner2"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/MAIN_crsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:padding="5dp"
+                android:text="@string/number_courses"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="@color/absa_red"
+                android:textSize="46sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MAIN_activLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_courseLayout"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/MAIN_actLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:padding="5dp"
+                android:text="@string/number_activities"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="@color/navy_blue"
+                android:textSize="46sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MAIN_percLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_activLayout"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/MAIN_percLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:padding="5dp"
+                android:text="@string/percent_complete"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_percComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="0.0%"
+                android:textColor="@color/green"
+                android:textSize="66sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/MAIN_completeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_percLayout"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingTop="20dp" >
+
+            <TextView
+                android:id="@+id/MAIN_compLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:padding="5dp"
+                android:text="@string/number_complete"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_numberComplete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/MAIN_lastDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Wednesday, 30 December 2014"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/MAIN_percProgress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_completeLayout"
+            android:background="@drawable/xgrey_white_rounded_corners"
+            android:max="100"
+            android:minWidth="60dp"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/MAIN_btnStart"
+            style="@style/ButtonRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MAIN_percProgress"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text="@string/start_trainee_ops" />
+    </RelativeLayout>
+
+</ScrollView>

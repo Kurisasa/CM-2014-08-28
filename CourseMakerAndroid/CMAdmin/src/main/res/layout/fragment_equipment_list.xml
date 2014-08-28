@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:id="@+id/EQ_editLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/EQ_header"
+            style="@style/Title3TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/admin_add_equipment" />
+
+        <EditText
+            android:id="@+id/EQ_equipmentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/admin_equipment_label"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" android:paddingTop="15dp" >
+
+            <Button
+                android:id="@+id/EQ_btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/admin_cancel" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/EQ_btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/admin_save" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/EQ_layoutx"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/EQ_editLayout" />
+
+    <RelativeLayout
+        android:id="@+id/EQ_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EQ_layoutx"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/EQ_label"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/equipment" />
+
+        <TextView
+            android:id="@+id/EQ_count"
+            style="@style/BlackCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="@string/zero" android:gravity="center"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/EQ_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/EQ_layout3"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey" />
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/SKILLITEM_txtNumber"
+        style="@style/RedCountBoxSmall"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/SKILLITEM_txtName"
+        style="@style/Title3TextStyleBlack"
+        android:text="Skill Name"
+        android:layout_toRightOf="@id/SKILLITEM_txtNumber"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

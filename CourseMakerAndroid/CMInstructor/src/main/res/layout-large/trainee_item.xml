@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TR_ITEM_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="10dp" >
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/TR_ITEM_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/boy" />
+    <TextView
+        android:id="@+id/TR_ITEM_txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/TR_ITEM_image"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/TR_ITEM_image"
+        android:text="Trainee name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/navy_blue" />
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_txtName"
+        android:layout_below="@+id/TR_ITEM_txtName"
+        android:background="@color/blue_pale" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtTotalTasksLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/tasks_total"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtTotalTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_layout1"
+        android:layout_below="@+id/TR_ITEM_layout1"
+        android:background="@color/blue_pale" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtTotalCompleteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/tasks_completed"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtTotalComplete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/navy_blue"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_layout2"
+        android:layout_below="@+id/TR_ITEM_layout2"
+        android:background="@drawable/xborder_rounded"
+        android:padding="10dp" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtPercLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/percent_complete"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtPerc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/green"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout3a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_layout3"
+        android:layout_below="@+id/TR_ITEM_layout3"
+        android:background="@drawable/xborder_rounded" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtInsRatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/average_rating_instr"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtInsAvgRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:text="0" android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/absa_red" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout3b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_layout3a"
+        android:layout_below="@+id/TR_ITEM_layout3a"
+        android:background="@drawable/xborder_rounded" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtTraineeRatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/average_rating_trainee"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtTraineeAvgRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black" android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TR_ITEM_image"
+        android:layout_below="@+id/TR_ITEM_layout3b"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue_pale" >
+        <TextView
+            android:id="@+id/TR_ITEM_txtDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="5dp"
+            android:text="@string/date_last"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/grey" />
+        <TextView
+            android:id="@+id/TR_ITEM_txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/TR_ITEM_txtDateLabel"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="Monday, 31 December 2014"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</RelativeLayout>

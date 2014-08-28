@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <NumberPicker
+        android:id="@+id/NUM_DIAG_numberPicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/NUM_DIAG_btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/NUM_DIAG_numberPicker1"
+        android:layout_marginTop="31dp"
+        android:text="@string/done" />
+
+</RelativeLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/SKV_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:visibility="visible"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/SKV_label"
+                style="@style/Title2TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/skill_levels"
+                android:textStyle="normal"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:id="@+id/SKV_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                style="@style/GreenCountBoxSmall"
+                android:text="00" />
+
+            <ImageView
+                android:id="@+id/SKV_imgNew"
+                android:src="@drawable/ic_action_new"
+                android:layout_toLeftOf="@id/SKV_count"
+                android:layout_marginRight="25dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout android:id="@+id/SKV_bottom"
+            android:layout_width="match_parent"
+            android:layout_below="@id/SKV_layout"
+            android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+        <ListView
+            android:id="@+id/SKV_listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/SKV_bottom"
+            android:background="@color/grey"
+            android:layout_marginTop="10dp"
+            android:dividerHeight="1dp" />
+
+    </RelativeLayout>

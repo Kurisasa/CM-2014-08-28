@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/EQP_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:padding="5dp"
+        android:src="@drawable/tools_48" />
+
+    <TextView
+        android:id="@+id/EQP_name"
+        style="@style/TextStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/EQP_image"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/EQP_image"
+        android:text="Equpment Name here" />
+
+    <TextView
+        android:id="@+id/EQP_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/xbluelight_rounded_corners"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

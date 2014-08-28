@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/ET_txtNumber"
+        style="@style/BlueCountBoxSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/ET_txtTitle"
+        style="@style/TextStyleBoldSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ET_txtNumber"
+        android:text="Calendar Event Title"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/ET_layoutFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ET_txtTitle"
+        android:layout_toRightOf="@id/ET_txtNumber" >
+
+        <TextView
+            android:id="@+id/ET_txtStartLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Start"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ET_txtStart"
+            style="@style/TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/ET_txtStartLabel"
+            android:layout_toRightOf="@id/ET_txtStartLabel"
+            android:padding="5dp"
+            android:text="Monday, 14 Dececember 2014 10:30"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ET_layoutTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/ET_layoutFrom"
+        android:layout_below="@id/ET_layoutFrom" >
+
+        <TextView
+            android:id="@+id/ET_txtEndLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="End"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ET_txtEnd"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/ET_txtEndLabel"
+            android:layout_toRightOf="@id/ET_txtEndLabel"
+            android:padding="5dp"
+            android:text="Monday, 14 Dececember 2014 12:30"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ET_txtSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ET_layoutTo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Summary of event is here, with details and shit"
+        android:textSize="12sp"
+        android:textStyle="normal" />
+
+</RelativeLayout>

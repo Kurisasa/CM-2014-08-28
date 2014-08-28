@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_list_inventory"
+        android:showAsAction="ifRoom"
+        android:title="@string/admin_list_inventory">
+    </item>
+    <item
+        android:id="@+id/menu_update_equipment"
+        android:showAsAction="ifRoom"
+        android:title="@string/admin_update_equipment">
+    </item>
+    <item
+        android:id="@+id/menu_delete_equipment"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_delete_equipment">
+    </item>
+
+</menu>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LK_ITEM_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/LK_ITEM_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/info_48" />
+
+    <TextView
+        android:id="@+id/LK_ITEM_txtName"
+        style="@style/Title3TextStyleBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/LK_ITEM_image"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/LK_ITEM_image"
+        android:text="Lookup Type name" />
+
+    <TextView
+        android:id="@+id/LK_ITEM_txtNumber"
+        style="@style/Title3TextStyleBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/LK_ITEM_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:text="100" />
+
+</RelativeLayout>

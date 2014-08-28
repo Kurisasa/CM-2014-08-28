@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+
+
+    <RelativeLayout
+        android:id="@+id/LH_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" android:background="@color/white"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/LH_aggregateLabel"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/class_completed" />
+
+        <TextView
+            android:id="@+id/LH_aggregate"
+            style="@style/Title2TextStyleGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/LH_aggregateLabel"
+            android:text="0,00" />
+
+        <TextView
+            android:id="@+id/LH_count"
+            style="@style/RedCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:text="00" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/CRS_listView" android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LH_layout"
+        android:background="@color/grey"
+        android:dividerHeight="10dp"
+         />
+
+</RelativeLayout>

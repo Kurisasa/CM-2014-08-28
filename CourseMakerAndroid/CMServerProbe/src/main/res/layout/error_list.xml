@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/E_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/E_header"
+            style="@style/TextStyleBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/error_list" />
+
+        <TextView
+            android:id="@+id/E_count"
+            style="@style/RedCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/E_header"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="0"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/E_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/E_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:dividerHeight="2dp" />
+
+</RelativeLayout>

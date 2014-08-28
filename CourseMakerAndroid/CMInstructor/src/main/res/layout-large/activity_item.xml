@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AR_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:gravity="left|center"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="left|center"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/AR_txtPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="@drawable/xblue_box"
+            android:padding="15dp"
+            android:text="33"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/AR_txtActName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@id/AR_txtPriority"
+            android:padding="10dp"
+            android:text="Name of the Activity"
+            android:textColor="@color/navy_blue"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/AR_txtActDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/AR_txtActName"
+            android:layout_below="@id/AR_txtActName"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="The description of the Activity whicj might be as much as several lines long and so we must be careful to design something that looks the part" />
+
+        <TextView
+            android:id="@+id/AR_completeMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/AR_txtActDesc"
+            android:layout_below="@id/AR_txtActDesc"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="Task completed"
+            android:textColor="@color/green_two"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/AR_completionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/AR_completeMsg"
+            android:layout_toRightOf="@+id/AR_completeMsg"
+            android:padding="10dp"
+            android:text="Saturday, 9 December 2013"
+            android:textColor="@color/green_two"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/AR_traineeRatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/AR_completeMsg"
+            android:layout_below="@id/AR_completeMsg"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/trainee_rating"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/AR_traineeRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/AR_traineeRatingLabel"
+            android:layout_toRightOf="@+id/AR_traineeRatingLabel"
+            android:padding="10dp"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/AR_instructorRatingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/AR_traineeRatingLabel"
+            android:layout_below="@id/AR_traineeRatingLabel"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/instructor_rating"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/AR_instructorRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/AR_instructorRatingLabel"
+            android:layout_toRightOf="@+id/AR_instructorRatingLabel"
+            android:padding="10dp"
+            android:text="00"
+            android:textColor="@color/maroon"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

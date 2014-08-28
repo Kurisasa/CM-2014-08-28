@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_add_class"
+        android:showAsAction="ifRoom"
+        android:title="@string/admin_add_class">
+    </item>
+    <item
+        android:id="@+id/menu_enroll_trainees"
+        android:showAsAction="ifRoom"
+        android:title="@string/label_enroll_trainees">
+    </item>
+    <item
+        android:id="@+id/menu_add_equipment"
+        android:showAsAction="ifRoom"
+        android:title="@string/admin_add_equipment">
+    </item>
+    <item
+        android:id="@+id/menu_trainee_equipment"
+        android:showAsAction="ifRoom"
+        android:title="@string/admin_trainee_equipment">
+    </item>
+
+</menu>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/HD_layout0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey"
+                android:gravity="left|center"
+                android:padding="10dp" >
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:gravity="left|center"
+            android:padding="15dp" >
+
+        <TextView
+                android:id="@+id/HD_txtCourse"
+                style="@style/Title3TextStyleBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:text="Name of the Course"
+                 />
+
+        <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Small"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/HD_txtActName"
+                style="@style/TextStyleBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_below="@id/HD_txtCourse"
+                android:padding="5dp"
+                android:text="Name of the Activity" />
+
+        <TextView
+                android:id="@+id/HD_txtActDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/HD_txtActName"
+                android:layout_below="@id/HD_txtActName"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="The description of the Activity whicj might be as much as several lines long and so we must be careful to design something that looks the part" />
+
+        <TextView
+                android:id="@+id/HD_txtHelpMe"
+                android:layout_below="@id/HD_txtActDesc"
+                android:text="@string/helpme" android:layout_marginTop="10dp"
+                style="@style/Title2TextStyleBlue" android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content" android:textColor="@color/absa_red"
+                android:layout_height="wrap_content"/>
+        <Spinner
+                android:id="@+id/HD_spinner"
+                android:layout_below="@id/HD_txtHelpMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <LinearLayout
+                android:layout_below="@id/HD_spinner"
+                android:layout_width="match_parent" android:layout_marginTop="15dp"
+                android:layout_height="wrap_content">
+
+            <Button android:id="@+id/HD_btnCancel"
+                    android:text="@string/never_mind"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"/>
+            <Button android:id="@+id/HD_btnSend"
+                    android:text="@string/help"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+        </RelativeLayout>
+
+</RelativeLayout>

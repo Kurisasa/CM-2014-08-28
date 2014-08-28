@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:padding="10dp"
+    tools:context=".InstructorClassActivity" >
+
+    <include
+        android:id="@+id/IC_instructor"
+        layout="@layout/instructor_item" />
+
+    <Spinner
+        android:id="@+id/IC_classSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IC_instructor"
+        android:layout_marginTop="5dp"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/IC_btnAddClass"
+        style="@style/ButtonNavyBlueSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IC_classSpinner"
+        android:layout_marginTop="5dp"
+        android:text="@string/add_class" />
+
+    <RelativeLayout
+        android:id="@+id/IC_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IC_btnAddClass"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/IC_txtHeader"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/assigned_classes" />
+
+        <TextView
+            android:id="@+id/IC_txtCount"
+            style="@style/RedCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="0"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/IC_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/IC_layout"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" >
+    </ListView>
+
+</RelativeLayout>

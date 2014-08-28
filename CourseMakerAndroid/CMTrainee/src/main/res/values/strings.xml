@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CMTrainee</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="demo_announce">Demo Announcements</string>
+    <string name="add_team_member">Add Member to Team</string>
+    <string name="already_in_team">You are already a member of the team</string>
+    <string name="team_member_added">Team Member Added</string>
+    <string name="enter_teamname">Enter Team Name</string>
+    <string name="save_team">Save Team</string>
+    <string name="class_teams">Class Teams</string>
+    <string name="join_team">Join Team</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_instructor_list">Instructor List</string>
+    <string name="title_activity_team_member">TeamMemberActivity</string>
+
+</resources>

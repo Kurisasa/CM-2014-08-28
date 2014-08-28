@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp" >
+    <ImageView
+        android:id="@+id/COURSE_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:src="@android:drawable/ic_menu_edit" />
+    <TextView
+        android:id="@+id/COURSE_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/COURSE_image"
+        android:padding="5dp"
+        android:text="Course Name here"
+        android:textColor="@color/blue_dark1"
+        android:textSize="16sp" />
+    <CheckBox
+        android:id="@+id/COURSE_chkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp" />
+</RelativeLayout>

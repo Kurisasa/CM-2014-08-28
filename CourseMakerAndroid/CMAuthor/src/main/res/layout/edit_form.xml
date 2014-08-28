@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/CRS_layoutCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/CRS_courseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Course :"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/CRS_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Course Name"
+            android:textColor="@color/navy_blue"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CRS_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CRS_layoutCourse"
+        android:orientation="horizontal"
+        android:padding="1dp" >
+
+        <TextView
+            android:id="@+id/CRS_lessonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task/Lesson :"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/CRS_lesson"
+            style="@style/Title2TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lesson Name here ..." />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/CRS_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CRS_layout0"
+        android:orientation="vertical"
+        android:padding="2dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xgrey_white_rounded_corners"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/add_48" />
+
+            <TextView
+                android:id="@+id/CRS_label2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:text="@string/add_objective"
+                android:textColor="@color/translucent_red"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/CRS_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_objective_name"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/CRS_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_objective_desc"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
+
+        <LinearLayout
+            style="@android:style/ButtonBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/CRS_btnCancel"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/CRS_btnSave"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:text="@string/save" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

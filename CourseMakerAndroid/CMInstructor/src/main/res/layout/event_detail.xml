@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/xwhite_grey"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/ED_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:id="@+id/ED_single"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ED_txtHdeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="Course Calendar Event"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/ED_spinClass"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dip" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Spinner
+                android:id="@+id/ED_spinClassCourse"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dip" />
+
+            <RelativeLayout
+                android:id="@+id/ED_editLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_spinClassCourse"
+                android:gravity="left|center"
+                android:padding="5dip" >
+
+                <EditText
+                    android:id="@+id/ED_editTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Please enter event title here"
+                    android:imeOptions="actionDone"
+                    android:padding="10dp"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/ED_btnMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="More.."
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ED_editLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_editLayout"
+                android:gravity="left|center"
+                android:orientation="vertical"
+                android:padding="10dip"
+                android:visibility="gone" >
+
+                <EditText
+                    android:id="@+id/ED_editDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Please enter event description"
+                    android:imeOptions="actionDone" />
+
+                <EditText
+                    android:id="@+id/ED_editWhere"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Where event takes place?"
+                    android:imeOptions="actionDone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ED_editLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_editLayout2"
+                android:gravity="left|center"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/ED_txtFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Starting Date/Time"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center" >
+
+                    <Button
+                        android:id="@+id/ED_btnFromDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="FROM DATE" />
+
+                    <Button
+                        android:id="@+id/ED_btnFromTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="FROM TIME" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ED_editLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_editLayout3"
+                android:gravity="left|center"
+                android:orientation="vertical"
+                android:padding="10dip" >
+
+                <TextView
+                    android:id="@+id/ED_txtTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Ending Date/Time"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center" >
+
+                    <Button
+                        android:id="@+id/ED_btnToDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="TO DATE" />
+
+                    <Button
+                        android:id="@+id/ED_btnToTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TO TIME" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ED_editLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_editLayout4"
+                android:gravity="left|center"
+                android:padding="10dip" >
+
+                <CheckBox
+                    android:id="@+id/ED_chlBoxAllDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="All day?" />
+            </RelativeLayout>
+
+            <Spinner
+                android:id="@+id/ED_spinRecur"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:padding="10dip" >
+
+                <Button
+                    android:id="@+id/ED_btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/xgrey_rounded_corners"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="20dip"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/ED_btnSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/xgreen_rounded_corners"
+                    android:text="Save Event"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

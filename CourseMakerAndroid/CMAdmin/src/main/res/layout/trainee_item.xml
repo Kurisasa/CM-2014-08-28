@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TR_ITEM_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="2dp" >
+
+    <RelativeLayout
+        android:id="@+id/TR_ITEM_layoutx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/TR_ITEM_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" android:scaleType="centerCrop"
+            android:src="@drawable/boy" />
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtNumber"
+            style="@style/Title3TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/TR_ITEM_image"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/TR_ITEM_image"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtName"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/TR_ITEM_txtNumber"
+            android:layout_marginLeft="5dp" android:textStyle="normal"
+            android:layout_toRightOf="@+id/TR_ITEM_txtNumber"
+            android:text="Trainee name" />
+
+
+            <TextView
+                android:id="@+id/TR_ITEM_txtCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TR_ITEM_txtName"
+                android:layout_alignLeft="@id/TR_ITEM_txtName"
+                android:text="city" style="@style/TextStyleBlue"
+                android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/TR_ITEM_txtClass"
+            style="@style/TextStyle"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/TR_ITEM_txtCity"
+            android:layout_below="@id/TR_ITEM_txtCity"
+            android:text="class" />
+    </RelativeLayout>
+
+</RelativeLayout>

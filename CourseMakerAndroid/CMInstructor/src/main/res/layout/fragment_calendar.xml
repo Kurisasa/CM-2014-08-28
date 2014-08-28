@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <ScrollView
+        android:id="@+id/ED_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ED_single"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ED_txtHdeader"
+                style="@style/TextStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/course_event"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ED_card1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/xwhite_rounded_corners"
+                android:gravity="left|center"
+                android:orientation="vertical" >
+
+                <Spinner
+                    android:id="@+id/ED_spinClass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dip" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:id="@+id/ED_txtCourse"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course Selection"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/ED_spinClassCourse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/ED_txtLesson"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lesson Selection"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/ED_spinLesson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/ED_editLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ED_spinClassCourse"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left|center" >
+
+                    <EditText
+                        android:id="@+id/ED_editTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Please enter event title here"
+                        android:imeOptions="actionDone"
+                        android:textColor="@color/blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/ED_btnMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="More.."
+                        android:textSize="12dp"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ED_editLayout3a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ED_card1"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/xwhite_rounded_corners"
+                android:orientation="vertical"
+                android:padding="5dip" >
+
+                <LinearLayout
+                    android:id="@+id/ED_editLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/beige_pale"
+                    android:gravity="left|center"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/ED_txtFrom"
+                        style="@style/TextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Starting Date/Time" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/ED_btnFromDate"
+                            style="@style/ButtonCancelSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_weight="2"
+                            android:text="FROM DATE"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+
+                        <Button
+                            android:id="@+id/ED_btnFromTime"
+                            style="@style/ButtonCancelSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/ED_btnFromDate"
+                            android:layout_weight="1"
+                            android:text="FROM TIME"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ED_editLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ED_editLayout3"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/blue_pale"
+                    android:gravity="left|center"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+
+                    <TextView
+                        android:id="@+id/ED_txtTo"
+                        style="@style/TextStyleBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Ending Date/Time" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center" >
+
+                        <Button
+                            android:id="@+id/ED_btnToDate"
+                            style="@style/ButtonCancelSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="TO DATE"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+
+                        <Button
+                            android:id="@+id/ED_btnToTime"
+                            style="@style/ButtonCancelSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TO TIME"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ED_editLayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ED_editLayout4"
+                    android:gravity="left|center" >
+
+                    <CheckBox
+                        android:id="@+id/ED_chlBoxAllDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/all_day" />
+                </RelativeLayout>
+
+                <Spinner
+                    android:id="@+id/ED_spinRecur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/ED_btnSubmit"
+                    style="@style/ButtonNavyBlueSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="2"
+                    android:text="@string/save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

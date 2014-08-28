@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/LH_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/LH_label"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/class_list" />
+
+        <TextView
+            android:id="@+id/LH_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/xblack_rounded_corners"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/CRS_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LH_layout"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        android:dividerHeight="5dp"
+        android:padding="5dp" />
+
+</RelativeLayout>

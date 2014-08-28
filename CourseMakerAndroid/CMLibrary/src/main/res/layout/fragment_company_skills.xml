@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/grey"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/FC_top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/FC_top"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/FC_txtCount"
+                style="@style/GreenCountBoxSmall"
+                android:text="00"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/FC_txtLabel"
+                style="@style/TextStyleGrey"
+                android:text="@string/skills"
+                android:textSize="20sp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/FC_txtCount"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/FC_listView"
+            android:layout_below="@id/FC_top"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>

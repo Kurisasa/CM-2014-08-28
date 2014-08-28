@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/CRSITEM_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:src="@drawable/cert1_48" />
+
+    <TextView
+        android:id="@+id/CRSITEM_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CRSITEM_image"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="63dp"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:padding="10dp"
+        android:text="Objective Name Here"
+        android:textColor="@color/navy_blue"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/CRSITEM_image"
+        android:layout_below="@+id/CRSITEM_image"
+        android:padding="10dp"
+        android:text="Resource link  here and there"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/CRSITEM_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/CRSITEM_name"
+        android:layout_toRightOf="@+id/CRSITEM_image"
+        android:background="@drawable/xgrey_box"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/CRSITEM_desc"
+        android:gravity="right|center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/CRSITEM_btnDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/arrow_blue_down_64" />
+
+        <ImageView
+            android:id="@+id/CRSITEM_btnUo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/arrow_blue_up_64" />
+    </LinearLayout>
+
+</RelativeLayout>

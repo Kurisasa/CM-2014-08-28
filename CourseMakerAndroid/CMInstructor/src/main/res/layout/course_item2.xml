@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/CRSITEM_top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/CRSITEM_cat"
+            style="@style/Title3TextStyleBlue"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="56dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category Name Here"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CRSITEM_top2"
+        android:layout_below="@id/CRSITEM_top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/CRSITEM_priority"
+            style="@style/GreyCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/CRSITEM_name"
+            android:layout_toRightOf="@+id/CRSITEM_image"
+            android:gravity="center"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/CRSITEM_name"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/CRSITEM_priority"
+            android:text="Course Name Here"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CRSITEM_bot"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/CRSITEM_top2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/CRSITEM_count"
+            style="@style/RedCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="00" />
+
+        <TextView
+            android:id="@+id/CRSITEM_label"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/CRSITEM_count"
+
+            android:text="@string/number_activities" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        style="@style/TextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/CRSITEM_bot"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:text="Course description here and there" />
+</RelativeLayout>
+

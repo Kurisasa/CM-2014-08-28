@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    <Button
+        android:id="@+id/CL_btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/add_courses_to_class"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+    <ExpandableListView
+        android:id="@+id/CL_expList"
+        style="@android:style/Widget.ExpandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

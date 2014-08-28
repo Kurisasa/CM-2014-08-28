@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left|center"
+    android:padding="5dip" >
+    <ImageView
+        android:id="@+id/EVENT_ITEM_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/activity_48" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center"
+        android:orientation="vertical"
+        android:padding="5dip" >
+        <TextView
+            android:id="@+id/EVENT_ITEM_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:text="A title or name"
+            android:textColor="@color/black" />
+        <LinearLayout
+            android:id="@+id/EVENT_ITEM_statusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:padding="10dp" >
+            <TextView
+                android:id="@+id/EVENT_ITEM_statusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dip"
+                android:text="Status:" />
+            <TextView
+                android:id="@+id/EVENT_ITEM_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:textColor="@color/opaque_red" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:padding="10dp" >
+            <TextView
+                android:id="@+id/EVENT_ITEM_startLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dip"
+                android:text="Start:" />
+            <TextView
+                android:id="@+id/EVENT_ITEM_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:textColor="@color/blue" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:padding="10dp" >
+            <TextView
+                android:id="@+id/EVENT_ITEM_endLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dip"
+                android:text="End:" />
+            <TextView
+                android:id="@+id/EVENT_ITEM_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:textColor="@color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/EVENT_ITEM_toggleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_beige_rounded_corners"
+            android:gravity="left|center"
+            android:orientation="vertical"
+            android:padding="5dip"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/EVENT_ITEM_summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:maxLines="3"
+                android:textColor="@color/blue" />
+            <LinearLayout
+                android:id="@+id/EVENT_ITEM_reminderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center" >
+                <TextView
+                    android:id="@+id/EVENT_ITEM_reminderLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dip"
+                    android:text="Reminders:" />
+                <TextView
+                    android:id="@+id/EVENT_ITEM_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/EVENT_ITEM_recurLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left|center" >
+                <TextView
+                    android:id="@+id/EVENT_ITEM_recurLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dip"
+                    android:text="Recurrence:" />
+                <TextView
+                    android:id="@+id/EVENT_ITEM_recur"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:textColor="@color/blue_dark1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

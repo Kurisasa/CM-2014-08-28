@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="left|center"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:padding="15dip" >
+    <ImageView
+        android:id="@+id/imgTOASTOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="2dip"
+        android:src="@drawable/error32" />
+    <TextView
+        android:id="@+id/txtTOASTMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/imgTOASTOK"
+        android:text="Error Message of Toast would show up here like this"
+        android:textColor="@color/absa_red"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+</RelativeLayout>

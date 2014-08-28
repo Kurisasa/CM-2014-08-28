@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CMAdmin/CMAdmin.iml" filepath="$PROJECT_DIR$/CMAdmin/CMAdmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CMAuthor/CMAuthor.iml" filepath="$PROJECT_DIR$/CMAuthor/CMAuthor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CMInstructor/CMInstructor.iml" filepath="$PROJECT_DIR$/CMInstructor/CMInstructor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CMLibrary/CMLibrary.iml" filepath="$PROJECT_DIR$/CMLibrary/CMLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" filepath="$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CMTrainee/CMTrainee.iml" filepath="$PROJECT_DIR$/CMTrainee/CMTrainee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CourseMakerAndroid.iml" filepath="$PROJECT_DIR$/CourseMakerAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
+

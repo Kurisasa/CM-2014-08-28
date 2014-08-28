@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/SKV_editLayout"
+        android:layout_below="@id/SKV_layout"
+        android:layout_width="match_parent"
+        android:background="@color/beige_pale"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/SKV_editName"
+            android:hint="@string/skill_level_enter"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/SKV_editLevel"
+            android:layout_below="@id/SKV_editName"
+            android:hint="@string/skill_level"
+            android:padding="10dp"
+            android:textSize="22sp"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_below="@id/SKV_editLevel"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/SKV_btnCancel"
+                android:hint="@string/cancel"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/SKV_btnSave"
+                android:hint="@string/submit"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

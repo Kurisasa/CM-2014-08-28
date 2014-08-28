@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <RelativeLayout
+            android:id="@+id/HR_nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:padding="5dp" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/HR_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/boy" />
+
+            <TextView
+                android:id="@+id/HR_txtTrainee"
+                style="@style/TextStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/HR_image"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/HR_image"
+                android:text="Trainee Name"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/HR_course"
+                style="@style/TextStyleBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/HR_txtTrainee"
+                android:layout_below="@+id/HR_txtTrainee"
+                android:layout_marginTop="5dp"
+                android:text="Course Name here"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/HR_activity"
+                style="@style/TextStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/HR_course"
+                android:layout_below="@+id/HR_course"
+                android:layout_marginTop="10dp"
+                android:text="Activity Name" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/HR_responseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/HR_problemLayout"
+            android:layout_below="@+id/HR_problemLayout"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:padding="5dp"
+            android:paddingBottom="20dp" >
+
+            <com.boha.coursemaker.base.PaddedCheckBox
+                android:id="@+id/HR_chkMeeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/sched_meet" />
+
+            <Button
+                android:id="@+id/HR_btnRespond"
+                style="@style/ButtonNavyBlueSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/HR_message"
+                android:layout_margin="10dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/send_response" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/HR_btnRespond" />
+
+            <com.boha.coursemaker.base.PaddedCheckBox
+                android:id="@+id/HR_chkSorted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/HR_chkMeeting"
+                android:layout_below="@+id/HR_chkMeeting"
+                android:text="@string/problem_sorted" />
+
+            <EditText
+                android:id="@+id/HR_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/HR_chkSorted"
+                android:ems="10"
+                android:hint="@string/response_messge"
+                android:imeOptions="actionDone" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/HR_title"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/HR_problemLayout"
+            android:layout_below="@+id/HR_nameLayout"
+            android:layout_marginTop="15dp"
+            android:padding="5dp"
+            android:text="@string/help_req_msg"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/HR_problemLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/HR_title"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/HR_helpType"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/problem_type"
+                android:textColor="@color/translucent_red" />
+
+            <TextView
+                android:id="@+id/HR_comment"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/HR_helpType"
+                android:layout_below="@+id/HR_helpType"
+                android:layout_marginTop="14dp"
+                android:text="The trainee&apos;s comment here" />
+
+            <TextView
+                android:id="@+id/HR_dateRequested"
+                style="@style/TextStyleGreenSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/HR_comment"
+                android:layout_below="@+id/HR_comment"
+                android:layout_marginTop="5dp"
+                android:text="Monday 30 November 2013"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

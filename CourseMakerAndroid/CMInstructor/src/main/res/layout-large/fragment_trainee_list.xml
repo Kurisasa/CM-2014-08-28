@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/xwhite_beige_rounded_corners"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    <LinearLayout
+        android:id="@+id/CRS_layoutx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/class_name"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CRS_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xgrey_white_gradient"
+            android:padding="10dp"
+            android:text="Training Class Name"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/LH_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CRS_layoutx"
+        android:orientation="horizontal"
+        android:padding="15dp" >
+        <TextView
+            android:id="@+id/LH_aggregateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/class_completed_perc"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/LH_aggregate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/LH_aggregateLabel"
+            android:text="0,00"
+            android:textColor="@color/green"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/LH_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/xblack_rounded_corners"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/CRS_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LH_layout"
+        android:background="@color/grey"
+        android:dividerHeight="10dp"
+        android:padding="10dp" />
+</RelativeLayout>

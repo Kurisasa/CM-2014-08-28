@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/STAT_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:src="@drawable/ball" />
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/STAT_image"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/STAT_companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="CompanyName"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/STAT_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/STAT_companyName"
+                android:layout_marginRight="5dp"
+                android:text="Wed 32 Decemeber 2014 10:33:24"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/STAT_date"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/STAT_companyName"
+                android:text="@string/date_registered" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout1"
+            android:layout_below="@id/STAT_layout1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/STAT_adminLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_admins"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_admins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout2"
+            android:layout_below="@id/STAT_layout2"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/STAT_authLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_authors"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/blue"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <!-- jj -->
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout3"
+            android:layout_below="@id/STAT_layout3"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue_pale"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/STAT_insLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_instructors"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_instructors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout4"
+            android:layout_below="@id/STAT_layout4"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/STAT_trLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_trainees"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_trainees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/translucent_red"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout5"
+            android:layout_below="@id/STAT_layout5"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_xclasses"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_classes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/blue"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout6"
+            android:layout_below="@id/STAT_layout6"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue_pale"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_categories"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/translucent_red"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout7"
+            android:layout_below="@id/STAT_layout7"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_xcourses"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_courses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout8"
+            android:layout_below="@id/STAT_layout8"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_lessons"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_lessons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout9"
+            android:layout_below="@id/STAT_layout9"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue_pale"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_acts"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_activities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout10"
+            android:layout_below="@id/STAT_layout10"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_links"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_links"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout11"
+            android:layout_below="@id/STAT_layout11"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_trainee_ratings"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_traineeRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/green"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout12"
+            android:layout_below="@id/STAT_layout12"
+            android:layout_marginTop="5dp"
+            android:background="@color/blue_pale"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_instr_ratings"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_insRatings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/translucent_red"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/STAT_layout14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/STAT_layout13"
+            android:layout_below="@id/STAT_layout13"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xborder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/number_trainee_acts"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/STAT_traineeActivities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00"
+                android:textColor="@color/navy_blue"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

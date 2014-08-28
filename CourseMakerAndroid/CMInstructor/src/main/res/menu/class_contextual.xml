@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_calendar"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/calendar"/>
+    <item
+        android:id="@+id/menu_refresh_atcivities"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/refresh_activities"/>
+    <item
+        android:id="@+id/menu_assign_courses"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/assign_courses"/>
+
+</menu>

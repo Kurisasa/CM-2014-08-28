@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_light"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+    <LinearLayout
+        android:id="@+id/RES_layoutx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:visibility="gone" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/course"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/RES_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Course Name"
+            android:textSize="24sp"
+            android:textStyle="normal" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/RES_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RES_layoutx"
+        android:background="@drawable/xgrey_white_gradient"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/task"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/RES_lessonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Lesson Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/LH_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RES_layout0"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+        <TextView
+            android:id="@+id/LH_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/resource_list"
+            android:textColor="@color/absa_red"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/LH_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/xblack_box"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/RES_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LH_layout"
+        android:dividerHeight="5dp"
+        android:padding="5dp" />
+</RelativeLayout>

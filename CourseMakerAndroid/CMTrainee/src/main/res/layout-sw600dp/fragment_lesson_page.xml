@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LP_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/LP_descLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/LP_desc"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Lesson description here, if its long let see what it will look like once its put up." />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:id="@+id/LP_btnLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:paddingTop="10dp" >
+
+            <Button
+                android:id="@+id/LP_btnObjectives"
+                style="@style/ButtonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/view_objectives"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/LP_btnResources"
+                style="@style/ButtonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/view_resources" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/LP_actLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LP_descLayout"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/LP_txtHdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/task_activities"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/LP_actCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/xblack_rounded_corners"
+            android:text="@string/zero"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/LP_txtCompLabel"
+            style="@style/Title2TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/LP_txtHdr"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/LP_txtHdr"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/completed" />
+
+        <TextView
+            android:id="@+id/LP_completed"
+            style="@style/Title2TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/LP_txtCompLabel"
+            android:layout_alignBottom="@+id/LP_txtCompLabel"
+            android:layout_marginLeft="87dp"
+            android:layout_toRightOf="@+id/LP_txtCompLabel"
+            android:text="@string/zero"
+            android:textColor="@color/green" />
+
+        <TextView
+            android:id="@+id/LP_numbers"
+            style="@style/Title2TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/LP_completed"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"
+            android:text="@string/zero_zero" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/LP_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LP_actLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:padding="5dp" >
+    </ListView>
+
+</RelativeLayout>

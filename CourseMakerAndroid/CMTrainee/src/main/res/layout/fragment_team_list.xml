@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:id="@+id/TEAM_layout0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/TEAM_label0"
+            style="@style/Title2TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_team"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/TEAM_editTeamName"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TEAM_label0"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/enter_team_name"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords" />
+
+        <Button
+            android:id="@+id/TEAM_btnSave"
+            style="@style/ButtonNavyBlueSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TEAM_editTeamName"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/save_team"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TEAM_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TEAM_layout0"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/TEAM_label"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/team_list" />
+
+        <TextView
+            android:id="@+id/TEAM_count"
+            style="@style/BlackCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="0" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/TEAM_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/TEAM_layout1"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey" />
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CE_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/CE_txtHdr"
+        style="@style/Title3TextStyleBlack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/add_calendar" />
+
+    <Spinner
+        android:id="@+id/CE_classSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CE_txtHdr"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/CE_txtCalendarExists"
+        style="@style/TextStyleBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CE_classSpinner"
+        android:layout_marginTop="5dp"
+        android:text="@string/calendar_exists" />
+
+    <EditText
+        android:id="@+id/CE_editDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CE_txtCalendarExists"
+        android:layout_marginTop="15dp"
+        android:hint="@string/calendar_description"
+        android:imeOptions="actionDone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CE_editDescription"
+        android:layout_marginTop="20dp"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/CE_btnCancel"
+            style="@style/ButtonCancelSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/CE_btnSave"
+            style="@style/ButtonNavyBlueSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/CE_btnCancel"
+            android:text="@string/save" />
+    </RelativeLayout>
+
+</RelativeLayout>

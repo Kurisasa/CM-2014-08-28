@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="15dp" >
+
+    <RelativeLayout
+        android:id="@+id/CRSITEM_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/CRSITEM_priority"
+            style="@style/GreenCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/CRSITEM_name"
+            android:gravity="center"
+            android:text="00"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/CRSITEM_name"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/CRSITEM_priority"
+            android:layout_centerVertical="true"
+            android:text="Course Name Here"
+            android:textStyle="bold" />
+        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/CRSITEM_bot"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/CRSITEM_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/CRSITEM_count"
+            style="@style/BlueCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="00"
+
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/CRSITEM_countLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/CRSITEM_count"
+            android:layout_centerVertical="true"
+            android:text="@string/activities"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/CRSITEM_bot2"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/CRSITEM_bot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/CRSITEM_countLinks"
+            style="@style/BlackCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="00"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/CRSITEM_countLabel2"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/CRSITEM_countLinks"
+            android:layout_centerVertical="true"
+            android:text="@string/links"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/CRSITEM_desc"
+        style="@style/TextStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/CRSITEM_bot2"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        android:text="Course description here and , whatever it takes to say it! Let's seewhat it looks like wjen stretched a bit." />
+
+
+
+</RelativeLayout>

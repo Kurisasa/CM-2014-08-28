@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LP_mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:padding="5dp" >
+
+    <include
+        android:id="@+id/LP_tHeader"
+        layout="@layout/trainee_header" />
+
+    <RelativeLayout
+        android:id="@+id/LP_actLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/LP_tHeader"
+        android:layout_marginTop="5dp"
+        android:background="@color/blue_pale"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/LP_txtHdr"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/task_activities" />
+
+        <TextView
+            android:id="@+id/LP_actCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/xblack_rounded_corners"
+            android:text="@string/zero"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/LP_txtCompLabel"
+            style="@style/Title2TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/LP_txtHdr"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/LP_txtHdr"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/completed" />
+
+        <TextView
+            android:id="@+id/LP_completed"
+            style="@style/Title1TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/LP_txtCompLabel"
+            android:layout_alignBottom="@+id/LP_txtCompLabel"
+            android:layout_marginLeft="87dp"
+            android:layout_toRightOf="@+id/LP_txtCompLabel"
+            android:text="@string/zero"
+            android:textColor="@color/absa_red" />
+
+        <TextView
+            android:id="@+id/LP_numbers"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/LP_completed"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"
+            android:text="@string/zero_zero" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/LP_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/LP_actLayout"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey" >
+    </ListView>
+
+</RelativeLayout>

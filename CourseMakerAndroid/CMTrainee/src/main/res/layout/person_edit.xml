@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/grey"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/PROF_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/PROF_firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_firstname"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/PROF_lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_lastname"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/PROF_cell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_cellphone"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/PROF_idNumber"
+                style="@style/Title2TextStyleBlue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/id_number"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/PROF_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/PROF_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/home_address"
+                android:imeOptions="actionDone"
+                android:inputType="textPostalAddress"
+                android:padding="10dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/PROF_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/PROF_layout1"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_pale"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <RadioButton
+                    android:id="@+id/PROF_radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female" />
+
+                <RadioButton
+                    android:id="@+id/PROF_radioMale"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/PROF_layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/PROF_layout2"
+            android:background="@drawable/xborder_rounded"
+            android:padding="2dp">
+
+            <LinearLayout
+                android:id="@+id/PROF_layoutX"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"
+                android:orientation="horizontal"
+                android:padding="5dp"></LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/PROF_layout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/PROF_layout3"
+            android:background="@drawable/xbeige_pale_corners"
+            android:padding="10dp"
+            android:visibility="visible">
+
+            <Spinner
+                android:id="@+id/PROF_provinceSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true" />
+
+            <Spinner
+                android:id="@+id/PROF_citySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/PROF_provinceSpinner" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/PROF_layout4"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/PROF_submit"
+                style="@style/ButtonNavyBlueSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/submit_profile" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
+

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ScrollView
+        android:id="@+id/INV_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:id="@+id/INV_editLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/INV_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/add_inventory"
+                style="@style/Title3TextStyleBlack" />
+
+            <EditText
+                android:id="@+id/INV_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/make_model"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:padding="5dp" />
+
+            <EditText
+                android:id="@+id/INV_serial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/serial_number"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:padding="5dp" />
+
+            <EditText
+                android:id="@+id/INV_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/year_acquired"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="5dp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <Button
+                    android:id="@+id/INV_btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/admin_cancel" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp" />
+
+                <Button
+                    android:id="@+id/INV_btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="@string/admin_save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/INV_layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/INV_scroll"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/INV_label"
+            style="@style/Title3TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/inventory_list" />
+
+        <TextView
+            android:id="@+id/INV_count"
+            style="@style/RedCountBoxSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" android:gravity="center"
+            android:text="@string/zero" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/INV_listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/INV_layout3"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey"
+        android:dividerHeight="3dp" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ScrollView>
+
+</RelativeLayout>

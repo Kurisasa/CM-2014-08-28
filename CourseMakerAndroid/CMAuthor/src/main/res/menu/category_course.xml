@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_add_category"
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/add_category" />
+    <item
+        android:id="@+id/action_add_course"
+        android:icon="@drawable/ic_action_new"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/add_course" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_action_camera"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/auth_profile" />
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_action_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_refresh" />
+
+
+</menu>

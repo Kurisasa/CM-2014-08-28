@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/SKLEV_ITEM_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/SKLEV_ITEM_txtNumber"
+            style="@style/BlackCountBoxSmall"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/SKLEV_ITEM_txtName"
+            style="@style/Title3TextStyleBlack"
+            android:text="Skill Level Name"
+            android:layout_toRightOf="@id/SKLEV_ITEM_txtNumber"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/SKLEV_ITEM_top"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="55dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/SKLEV_ITEM_label"
+            style="@style/TextStyleGrey"
+            android:text="Skill Level Number"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/SKLEV_ITEM_level"
+            style="@style/Title1TextStyleBlue"
+            android:text="3"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

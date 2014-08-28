@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AR_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/xwhite_rounded_corners"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:id="@+id/AR_topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/AR_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/folder_48" />
+
+        <TextView
+            android:id="@+id/AR_txtClassName"
+            style="@style/Title2TextStyleBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Name of the Class" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/AR_startLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AR_topLayout"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/AR_startLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:text="@string/start_date" />
+
+        <TextView
+            android:id="@+id/AR_startDate"
+            style="@style/TextStyleGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/AR_startLabel"
+            android:text="23 December 2014" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/AR_endLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AR_startLayout"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/AR_endLabel"
+            style="@style/TextStyleGrey"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:text="@string/end_date" />
+
+        <TextView
+            android:id="@+id/AR_endDate"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/AR_endLabel"
+            android:text="23 December 2015" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/AR_totalTasksLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AR_endLayout"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/AR_totalTasks"
+            style="@style/Title2TextStyleBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24" />
+
+        <TextView
+            android:id="@+id/AR_totalLabel"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/tasks_total" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/AR_totalCompLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/AR_totalTasksLayout"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/AR_totalComplete"
+            style="@style/Title2TextStyleGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24" />
+
+        <TextView
+            android:id="@+id/AR_completeMsg"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/AR_totalComplete"
+            android:padding="10dp"
+            android:text="@string/tasks_completed" />
+
+        <TextView
+            android:id="@+id/AR_percComplete"
+            style="@style/Title1TextStyleGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/AR_totalComplete"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:text="23,5 %" />
+    </RelativeLayout>
+
+</RelativeLayout>

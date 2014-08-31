@@ -420,7 +420,9 @@ public class TraineeListFragment extends Fragment implements PageInterface,
 
     @Override
     public void onPasswordReturned(String password) {
-
+            Log.e(LOG, "--------------> Password returned: " + password);
+            trainee.setPassword(password);
+            PeopleDialog.sendTraineeMail(ctx,trainee);
     }
 
     public void setResponse(ResponseDTO response) {

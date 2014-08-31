@@ -61,7 +61,6 @@ public class PasswordRequestUtil {
                     Log.e("PasswordRequest",response.getMessage());
                     return;
                 }
-                //ToastUtil.toast(ctx, ctx.getResources().getString(R.string.pswd_request_sent));
                 listener.onPasswordReturned(response.getCredential());
             }
 

@@ -19,6 +19,7 @@ import com.boha.coursemaker.dto.AdministratorDTO;
 import com.boha.coursemaker.dto.CompanyDTO;
 import com.boha.coursemaker.dto.RequestDTO;
 import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.util.CacheUtil;
 import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
@@ -121,6 +122,17 @@ public class RegistrationActivity extends BaseRegistration {
                             SharedUtil.saveCompany(ctx, response.getCompany());
                         }
                         sendDeviceToServer(BaseRegistration.ADMINISTRATOR, response.getAdministrator().getAdministratorID());
+                        CacheUtil.cacheData(ctx,response, CacheUtil.CACHE_DATA, new CacheUtil.CacheUtilListener() {
+                            @Override
+                            public void onFileDataDeserialized(ResponseDTO response) {
+
+                            }
+
+                            @Override
+                            public void onDataCached() {
+
+                            }
+                        });
                         startMain();
                     }
                 });

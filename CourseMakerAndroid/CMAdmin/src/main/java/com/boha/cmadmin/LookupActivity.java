@@ -35,6 +35,7 @@ import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
 import com.boha.coursemaker.util.WebSocketUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LookupActivity extends Activity {
@@ -670,8 +671,8 @@ public class LookupActivity extends Activity {
 	int currentOperation = ADD, processingType;
 	static final int ADD = 1, UPDATE = 2, DELETE = 3;
 	LookupInterface lookupInterface;
-	List<RatingDTO> ratingList;
-	List<HelpTypeDTO> helpTypeList;
+	List<RatingDTO> ratingList = new ArrayList<>();
+	List<HelpTypeDTO> helpTypeList = new ArrayList<>();
 	HelpTypeDTO helpType;
 	RatingDTO rating;
 	ListView listView;

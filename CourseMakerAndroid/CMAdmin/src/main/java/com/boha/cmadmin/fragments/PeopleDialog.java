@@ -726,7 +726,15 @@ public class PeopleDialog extends DialogFragment {
         return found;
     }
 
-    private void sendMail(String password) {
+    public static void sendTraineeMail(Context c,TraineeDTO t) {
+        type = TRAINEE;
+        trainee = t;
+        ctx = c;
+        sendMail(trainee.getPassword());
+    }
+
+    private static void sendMail(String password) {
+        Log.w(LOG, "######## sending email");
         AdministratorDTO admin = SharedUtil.getAdministrator(ctx);
         String name = null;
         String actorEmail = null, app = null;
@@ -808,12 +816,12 @@ public class PeopleDialog extends DialogFragment {
     private List<CityDTO> cityList;
     private CityDTO city;
     private ProvinceDTO province;
-    private TraineeDTO trainee;
-    private InstructorDTO instructor;
-    private AuthorDTO author;
-    private AdministratorDTO administrator;
-    private int type, action;
-    private Context ctx;
+    private static TraineeDTO trainee;
+    private static InstructorDTO instructor;
+    private static AuthorDTO author;
+    private static AdministratorDTO administrator;
+    private static int type, action;
+    private static Context ctx;
     static final String LOG = "PeopleDialog";
     private RequestDTO request;
     private TrainingClassDTO trainingClass;

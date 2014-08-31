@@ -17,13 +17,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 import com.boha.cmadmin.adapter.InstructorClassAdapter;
 import com.boha.coursemaker.base.BaseVolley;
 import com.boha.coursemaker.dto.InstructorClassDTO;
@@ -34,7 +33,8 @@ import com.boha.coursemaker.dto.TrainingClassDTO;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
 import com.boha.coursemaker.util.WebSocketUtil;
-import com.boha.volley.toolbox.BohaVolley;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -197,20 +197,19 @@ public class InstructorClassActivity extends Activity {
 		txtEmail = (TextView) findViewById(R.id.TR_ITEM_txtEmail);
 		txtCount = (TextView) findViewById(R.id.IC_txtCount);
 		txtCount2 = (TextView) findViewById(R.id.TR_ITEM_classCount);
-		image = (NetworkImageView) findViewById(R.id.TR_ITEM_image);
+		image = (ImageView) findViewById(R.id.TR_ITEM_image);
 		//
 		txtName.setText(instructor.getFirstName() + " "
 				+ instructor.getLastName());
 		txtEmail.setText(instructor.getEmail());
 		txtCity.setText(instructor.getCityName());
 		//
-		imageLoader = BohaVolley.getImageLoader(ctx);
 		StringBuilder sb = new StringBuilder();
 		sb.append(Statics.IMAGE_URL).append("company")
 				.append(instructor.getCompanyID()).append("/instructor/");
 		sb.append(instructor.getInstructorID()).append(".jpg");
-		image.setDefaultImageResId(R.drawable.boy);
-		image.setImageUrl(sb.toString(), imageLoader);
+        ImageLoader.getInstance().displayImage(sb.toString(), image, options);
+
 		btnAdd.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -398,14 +397,21 @@ public class InstructorClassActivity extends Activity {
 	List<TrainingClassDTO> trainingClassList;
 	List<InstructorClassDTO> instructorClassList;
 	InstructorClassDTO instructorClass;
-	ImageLoader imageLoader;
 	Menu mMenu;
 	InstructorDTO instructor;
 	ListView mListView;
 	Spinner spinner;
 	Button btnAdd;
-	NetworkImageView image;
+	ImageView image;
 	TextView txtName, txtEmail, txtCity, txtCount, txtCount2;
 	ResponseDTO response;
 	InstructorClassAdapter adapter;
+    public static final DisplayImageOptions options = new DisplayImageOptions.Builder()
+            .showImageOnLoading(com.boha.cmlibrary.R.drawable.ic_action_add_person) // resource or drawable
+            .showImageForEmptyUri(com.boha.cmlibrary.R.drawable.boy) // resource or drawable
+            .showImageOnFail(com.boha.cmlibrary.R.drawable.boy) // resource or drawable
+            .resetViewBeforeLoading(false)  // default
+            .cacheInMemory(true) // default
+            .cacheOnDisk(true) // default
+            .build();
 }

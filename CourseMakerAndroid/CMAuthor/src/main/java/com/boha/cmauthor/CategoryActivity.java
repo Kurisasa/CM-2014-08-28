@@ -216,9 +216,8 @@ public class CategoryActivity extends FragmentActivity implements
 			MenuItem mi = mMenu.getItem(1);
 			mi.setVisible(false);
 		}
-		if (response == null) {
-			getCategoryList();
-		}
+	    getCategoryList();
+
 		return true;
 	}
 

@@ -447,7 +447,13 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
 
     @Override
     public void setNotBusy() {
-        setRefreshActionButtonState(false);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                setRefreshActionButtonState(false);
+            }
+        });
+
     }
 
     @Override

@@ -11,15 +11,15 @@ public class Statics {
      * REMOTE URL - bohamaker back end - production
      */
 //    //
-//    public static final String URL = "http://bohamaker.com:51490/cm/";
-//    public static final String IMAGE_URL = "http://bohamaker.com:51490/coursemaker_images/";
-//    public static final String WEBSOCKET_URL = "ws://bohamaker.com:51490/cm/";
+    public static final String URL = "http://bohamaker.com:51490/cm/";
+    public static final String IMAGE_URL = "http://bohamaker.com:51490/coursemaker_images/";
+    public static final String WEBSOCKET_URL = "ws://bohamaker.com:51490/cm/";
     /*
 	 * LOCAL URL - pecanwood dungeon
 	 */
-    public static final String URL = "http://192.168.1.111:8050/cm/";
-    public static final String IMAGE_URL = "http://192.168.1.111:8050/coursemaker_images/";
-    public static final String WEBSOCKET_URL = "ws://192.168.1.111:8050/cm/";
+//    public static final String URL = "http://192.168.1.111:8050/cm/";
+//    public static final String IMAGE_URL = "http://192.168.1.111:8050/coursemaker_images/";
+//    public static final String WEBSOCKET_URL = "ws://192.168.1.111:8050/cm/";
 
 
     public static final String AUTHOR_ENDPOINT = "wsauthor",

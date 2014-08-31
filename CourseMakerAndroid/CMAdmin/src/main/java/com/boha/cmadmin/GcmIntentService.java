@@ -78,7 +78,8 @@ public class GcmIntentService extends GCMBaseIntentService {
 		try {
 			dto = gson.fromJson(message, HelpRequestDTO.class);
 		} catch (Exception e) {
-			Log.e(TAG, "gcm message cannot be parsed. might be null ... why?");
+			Log.e(TAG, "gcm message is not a help request....\n" + message);
+
 			return;
 		}
 

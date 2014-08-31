@@ -1,7 +1,5 @@
 package com.boha.cmtrainee;
 
-import java.io.UnsupportedEncodingException;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,8 +13,14 @@ import android.widget.Spinner;
 
 import com.boha.coursemaker.base.BaseRegistration;
 import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.util.CacheUtil;
+import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
+
+import java.io.UnsupportedEncodingException;
 
 public class RegistrationActivity extends BaseRegistration {
 
@@ -58,12 +62,59 @@ public class RegistrationActivity extends BaseRegistration {
 			return;
 		}
 		password = editPassword.getText().toString();
-		type = RequestDTO.LOGIN_TRAINEE;
-		try {
-			getRemoteData(type, Statics.SERVLET_TRAINEE);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		type = RequestDTO.LOGIN_TRAINEE;
+//		try {
+//			getRemoteData(type, Statics.SERVLET_TRAINEE);
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.LOGIN_TRAINEE);
+        w.setEmail(email);
+        w.setPassword(password);
+        w.setGcmDevice(gcmDevice);
+
+        WebSocketUtil.sendRequest(ctx,Statics.TRAINEE_ENDPOINT,w,new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx, response.getMessage());
+                            return;
+                        }
+                        SharedUtil.saveTrainee(ctx, response.getTrainee());
+                        SharedUtil.saveCompany(ctx,response.getCompany());
+                        SharedUtil.saveTrainingClass(ctx,response.getTrainingClass());
+                        CacheUtil.cacheData(ctx,response,CacheUtil.CACHE_TRAINEE_ACTIVITY,new CacheUtil.CacheUtilListener() {
+                            @Override
+                            public void onFileDataDeserialized(ResponseDTO response) {
+
+                            }
+
+                            @Override
+                            public void onDataCached() {
+
+                            }
+                        });
+                        sendDeviceToServer(BaseRegistration.TRAINEE,response.getTrainee().getTraineeID());
+                        startMain();
+                    }
+                });
+
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        });
 	}
 
 

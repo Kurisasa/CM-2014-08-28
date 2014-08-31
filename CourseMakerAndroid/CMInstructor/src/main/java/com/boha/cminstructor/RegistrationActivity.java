@@ -1,7 +1,5 @@
 package com.boha.cminstructor;
 
-import java.io.UnsupportedEncodingException;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,9 +13,14 @@ import android.widget.Spinner;
 
 import com.boha.coursemaker.base.BaseRegistration;
 import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
 import com.google.android.gcm.GCMRegistrar;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * Activity to manage the initial login for an Instructor.
@@ -66,13 +69,52 @@ public class RegistrationActivity extends BaseRegistration {
 			return;
 		}
 		password = editPassword.getText().toString();
-		type = RequestDTO.LOGIN_INSTRUCTOR;
-		
-		try {
-			getRemoteData(type, Statics.SERVLET_INSTRUCTOR);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		type = RequestDTO.LOGIN_INSTRUCTOR;
+//
+//		try {
+//			getRemoteData(type, Statics.SERVLET_INSTRUCTOR);
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.LOGIN_INSTRUCTOR);
+        w.setEmail(email);
+        w.setPassword(password);
+
+        WebSocketUtil.sendRequest(ctx, Statics.INSTRUCTOR_ENDPOINT, w, new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx, response.getMessage());
+                            return;
+                        }
+                        SharedUtil.saveCompany(ctx, response.getCompany());
+                        SharedUtil.saveInstructor(ctx, response.getInstructor());
+                        sendDeviceToServer(BaseRegistration.INSTRUCTOR, response.getInstructor().getInstructorID());
+                        startMain();
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.errorToast(ctx, message);
+                    }
+                });
+            }
+        });
 	}
 	
 

@@ -7,25 +7,38 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.volley.toolbox.ImageLoader;
+
 import com.boha.cmadmin.R;
 import com.boha.cmadmin.adapter.AuthorAdapter;
-import com.boha.cmadmin.listeners.*;
+import com.boha.cmadmin.listeners.CameraRequestListener;
+import com.boha.cmadmin.listeners.ContextMenuInterface;
+import com.boha.cmadmin.listeners.PageInterface;
+import com.boha.cmadmin.listeners.PasswordRequestListener;
+import com.boha.cmadmin.listeners.PeopleDialogListener;
 import com.boha.coursemaker.dto.AdministratorDTO;
 import com.boha.coursemaker.dto.AuthorDTO;
 import com.boha.coursemaker.dto.PhotoUploadDTO;
 import com.boha.coursemaker.dto.ResponseDTO;
 import com.boha.coursemaker.listeners.BusyListener;
 import com.boha.coursemaker.listeners.PhotoUploadedListener;
-import com.boha.coursemaker.util.*;
-import com.boha.volley.toolbox.BohaVolley;
+import com.boha.coursemaker.util.Bitmaps;
+import com.boha.coursemaker.util.ImageUtil;
+import com.boha.coursemaker.util.PictureUtil;
+import com.boha.coursemaker.util.SharedUtil;
+import com.boha.coursemaker.util.ToastUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
 import java.util.List;
@@ -78,7 +91,6 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 				.inflate(R.layout.fragment_author_list, container, false);
 		setFields();
 		administrator = SharedUtil.getAdministrator(ctx);
-		imageLoader = BohaVolley.getImageLoader(ctx);
 		Bundle b = getArguments();
 		response = (ResponseDTO)b.getSerializable("response");
 		authorList = response.getAuthorList();
@@ -112,31 +124,23 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 	}
 
 	List<AuthorDTO> authorList;
-	ImageLoader imageLoader;
 
+    public void refreshAfterPhoto() {
+        Log.w(LOG, "*********** refreshAfterPhoto clearing cache");
+        ImageLoader.getInstance().clearDiskCache();
+        ImageLoader.getInstance().clearMemoryCache();
+        setList();
+    }
 
 	private void setList() {
-		if (imageLoader == null) {
-			imageLoader = BohaVolley.getImageLoader(getActivity());
-		}
-		if (getActivity() == null) {
-			Log.e(LOG, "Context is NULL. Somethin weird going down ...");
-			return;
-		}
-		adapter = new AuthorAdapter(getActivity(), R.layout.author_item, authorList,
-				imageLoader);
-		if (authorList == null) {
-			Log.w(LOG, "setList - authorList is NULL");
-			return;
-		}
-		if (authorList.size() == 0) {
-			addAuthor();
-		}
+
+		adapter = new AuthorAdapter(getActivity(), R.layout.author_item, authorList);
+
 		txtCount.setText("" + authorList.size());
 		listView.setAdapter(adapter);
 		listView.setDividerHeight(2);
 		registerForContextMenu(listView);
-
+        listView.setSelection(selectedIndex);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -158,7 +162,7 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 	}
 
 	static final String LOG = "AuthorListFragment";
-
+    int selectedIndex;
 	private void setFields() {
 		
 		txtCount = (TextView) view.findViewById(R.id.CLS_count);
@@ -173,6 +177,7 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 		inflater.inflate(R.menu.author_context_menu, menu);
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
 		author = authorList.get(info.position);
+        selectedIndex = info.position;
 		menu.setHeaderTitle(author.getFirstName() + " " + author.getLastName());
 		menu.setHeaderIcon(ctx.getResources().getDrawable(R.drawable.users32));
 		super.onCreateContextMenu(menu, v, menuInfo);

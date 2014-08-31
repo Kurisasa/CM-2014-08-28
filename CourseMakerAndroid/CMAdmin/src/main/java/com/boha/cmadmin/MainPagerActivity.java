@@ -150,6 +150,8 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
         req.setCompanyID(SharedUtil.getCompany(getApplicationContext())
                 .getCompanyID());
 
+        Log.i(LOG,"--------- getCompanyDataFromServer companyID: " + req.getCompanyID());
+
         if (!BaseVolley.checkNetworkOnDevice(ctx))
             return;
         setRefreshActionButtonState(true);
@@ -656,6 +658,32 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
                                 @Override
                                 public void onPhotoUploaded() {
                                     Log.i(LOG, " photo has been uploaded");
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Log.e(LOG, "################ about to hit refresh ##########");
+                                            switch (requestorType) {
+                                                case PhotoUploadDTO.ADMINISTRATOR:
+                                                    adminListFragment.refreshAfterPhoto();
+                                                    break;
+                                                case PhotoUploadDTO.AUTHOR:
+                                                    authorListFragment.refreshAfterPhoto();
+                                                    break;
+                                                case PhotoUploadDTO.INSTRUCTOR:
+                                                    instructorListFragment.refreshAfterPhoto();
+                                                    break;
+                                                case PhotoUploadDTO.TRAINEE:
+                                                    traineeListFragment.refreshAfterPhoto();
+                                                    break;
+
+                                                default:
+                                                    break;
+                                            }
+
+                                        }
+                                    });
+
+
                                 }
 
                                 @Override
@@ -685,23 +713,7 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
                 ToastUtil.errorToast(ctx, ctx.getResources().getString(R.string.camera_error));
                 return;
             }
-            Log.i(LOG, "-------------------------> onPostExecute, to refresh fragment - actor's picture");
-            //TODO - force appropriate fragment to refresh image ....
-            switch (requestorType) {
-                case PhotoUploadDTO.ADMINISTRATOR:
-                    break;
-                case PhotoUploadDTO.AUTHOR:
-                    break;
-                case PhotoUploadDTO.INSTRUCTOR:
-                    //instructorListFragment.setBitmaps(bitmaps);
-                    break;
-                case PhotoUploadDTO.TRAINEE:
-                    //traineeListFragment.setBitmaps(bitmaps);
-                    break;
 
-                default:
-                    break;
-            }
         }
     }
 

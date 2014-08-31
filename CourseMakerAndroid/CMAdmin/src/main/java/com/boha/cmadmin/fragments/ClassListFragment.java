@@ -141,18 +141,7 @@ public class ClassListFragment extends Fragment implements PageInterface {
 		openClassForm();
 	}
 
-	void setList() {
-		if (getActivity() == null) {
-			Log.e(LOG, "Context is NULL. Somethin weird going down ...");
-			return;
-		}
-		if (trainingClassList == null) {
-			Log.w(LOG, "setList - list is NULL");
-			return;
-		}
-		if (trainingClassList.size() == 0) {
-			addNewClass();
-		}
+	private void setList() {
 
 		adapter = new TrainingClassAdapter(getActivity(),
 				R.layout.training_class_item, trainingClassList);

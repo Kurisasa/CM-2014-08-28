@@ -7,18 +7,26 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.volley.toolbox.ImageLoader;
+
 import com.boha.cmadmin.R;
 import com.boha.cmadmin.adapter.InstructorAdapter;
-import com.boha.cmadmin.listeners.*;
-import com.boha.cmlibrary.CMApp;
+import com.boha.cmadmin.listeners.CameraRequestListener;
+import com.boha.cmadmin.listeners.InstructorClassRequestListener;
+import com.boha.cmadmin.listeners.PageInterface;
+import com.boha.cmadmin.listeners.PasswordRequestListener;
+import com.boha.cmadmin.listeners.PeopleDialogListener;
 import com.boha.coursemaker.dto.AdministratorDTO;
 import com.boha.coursemaker.dto.InstructorDTO;
 import com.boha.coursemaker.dto.PhotoUploadDTO;
@@ -27,8 +35,12 @@ import com.boha.coursemaker.email.AsyncMailSender;
 import com.boha.coursemaker.listeners.BusyListener;
 import com.boha.coursemaker.listeners.MailSenderListener;
 import com.boha.coursemaker.listeners.PhotoUploadedListener;
-import com.boha.coursemaker.util.*;
-import com.boha.volley.toolbox.BohaVolley;
+import com.boha.coursemaker.util.Bitmaps;
+import com.boha.coursemaker.util.ImageUtil;
+import com.boha.coursemaker.util.PictureUtil;
+import com.boha.coursemaker.util.SharedUtil;
+import com.boha.coursemaker.util.ToastUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
 import java.util.Collections;
@@ -88,7 +100,6 @@ public class InstructorListFragment extends Fragment implements PageInterface,
 		view = inflater.inflate(R.layout.fragment_instructor_list, container,
 				false);
 		setFields();
-		imageLoader = BohaVolley.getImageLoader(ctx);
 		Bundle b = getArguments();
 		response = (ResponseDTO) b.getSerializable("response");
 		instructorList = response.getInstructorList();
@@ -122,23 +133,18 @@ public class InstructorListFragment extends Fragment implements PageInterface,
 
 	List<InstructorDTO> instructorList;
 
-	ImageLoader imageLoader;
 
+    public void refreshAfterPhoto() {
+        ImageLoader.getInstance().clearDiskCache();
+        ImageLoader.getInstance().clearMemoryCache();
+        setList();
+    }
 	private void setList() {
 
-		if (imageLoader == null) {
-            CMApp app = (CMApp) getActivity().getApplication();
-			imageLoader = app.getImageLoader();
-		}
+
 		adapter = new InstructorAdapter(getActivity(),
-				R.layout.instructor_item, instructorList, imageLoader);
-		if (instructorList == null) {
-			Log.w(LOG, "setList - instructorList is NULL");
-			return;
-		}
-		if (instructorList.size() == 0) {
-			addInstructor();
-		}
+				R.layout.instructor_item, instructorList);
+
 		txtCount.setText("" + instructorList.size());
 		listView.setAdapter(adapter);
 		listView.setDividerHeight(2);

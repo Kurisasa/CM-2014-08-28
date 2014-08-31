@@ -13,7 +13,7 @@
         android:background="@drawable/xwhite_rounded_corners"
         android:padding="5dp" >
 
-        <com.android.volley.toolbox.NetworkImageView
+        <ImageView
             android:id="@+id/TR_ITEM_image"
             android:layout_width="100dp"
             android:layout_height="100dp" android:scaleType="centerCrop"

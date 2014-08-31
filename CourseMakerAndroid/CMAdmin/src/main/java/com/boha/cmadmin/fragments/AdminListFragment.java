@@ -7,14 +7,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.volley.toolbox.ImageLoader;
+
 import com.boha.cmadmin.R;
 import com.boha.cmadmin.adapter.AdminAdapter;
 import com.boha.cmadmin.listeners.CameraRequestListener;
@@ -29,7 +34,7 @@ import com.boha.coursemaker.listeners.BusyListener;
 import com.boha.coursemaker.listeners.MailSenderListener;
 import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.ToastUtil;
-import com.boha.volley.toolbox.BohaVolley;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
 import java.util.List;
@@ -77,7 +82,6 @@ public class AdminListFragment extends Fragment implements PageInterface,
 		view = inflater.inflate(R.layout.fragment_admin_list, container, false);
 		setFields();
 		administrator = SharedUtil.getAdministrator(ctx);
-		imageLoader = BohaVolley.getImageLoader(ctx);
 		Bundle b = getArguments();
 		response = (ResponseDTO)b.getSerializable("response");
 		adminList = response.getAdministratorList();
@@ -109,30 +113,21 @@ public class AdminListFragment extends Fragment implements PageInterface,
 	}
 
 	List<AdministratorDTO> adminList;
-	ImageLoader imageLoader;
 
+    public void refreshAfterPhoto() {
+        ImageLoader.getInstance().clearDiskCache();
+        ImageLoader.getInstance().clearMemoryCache();
+        setList();
+    }
 	private void setList() {
-		if (imageLoader == null) {
-			imageLoader = BohaVolley.getImageLoader(getActivity());
-		}
-		if (getActivity() == null) {
-			Log.e(LOG, "Context is NULL. Somethin weird going down ...");
-			return;
-		}
-		adapter = new AdminAdapter(getActivity(), R.layout.admin_item, adminList,
-				imageLoader);
-		if (adminList == null) {
-			Log.w(LOG, "setList - adminList is NULL");
-			return;
-		}
-		if (adminList.size() == 0) {
-			addAdministrator();
-		}
+
+		adapter = new AdminAdapter(getActivity(), R.layout.admin_item, adminList);
+
 		txtCount.setText("" + adminList.size());
 		listView.setAdapter(adapter);
 		listView.setDividerHeight(2);
 		registerForContextMenu(listView);
-
+        listView.setSelection(selectedIndex);
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -163,6 +158,7 @@ public class AdminListFragment extends Fragment implements PageInterface,
 
 	}
 
+    int selectedIndex;
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
@@ -171,6 +167,7 @@ public class AdminListFragment extends Fragment implements PageInterface,
 		inflater.inflate(R.menu.admin_context_menu, menu);
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
 		selectedAdministrator = adminList.get(info.position);
+        selectedIndex = info.position;
 		menu.setHeaderTitle(selectedAdministrator.getFirstName() + " "
 				+ selectedAdministrator.getLastName());
 		menu.setHeaderIcon(ctx.getResources().getDrawable(R.drawable.users32));

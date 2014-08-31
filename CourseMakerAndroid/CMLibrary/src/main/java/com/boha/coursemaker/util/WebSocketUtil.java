@@ -54,6 +54,8 @@ public class WebSocketUtil {
         webSocketListener = listener;
         request = req;
         ctx = c;
+        Gson g = new Gson();
+        Log.i(LOG, "Sending data, suffix: " + suffix + "\n" + g.toJson(req));
         TimerUtil.startTimer(new TimerUtil.TimerListener() {
             @Override
             public void onSessionDisconnected() {
@@ -153,6 +155,9 @@ public class WebSocketUtil {
                     //Log.d(LOG, "################ unpacked length: " + unZip.length());
                     if (content != null) {
                         Log.e(LOG, "############# onMessage, unpacked length: " + content.length()  + " elapsed: " + getElapsed());
+                        if (content.length() < 1000) {
+                            Log.i(LOG,content);
+                        }
                         ResponseDTO response = gson.fromJson(content, ResponseDTO.class);
                         if (response.getStatusCode() == 0) {
                             webSocketListener.onMessage(response);

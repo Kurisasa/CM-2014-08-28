@@ -192,6 +192,11 @@ public class RequestDTO implements CourseMakerData {
     public static final int UPDATE_COMPANY_SKILL = 1304;
     public static final int UPDATE_COMPANY_SKILL_LEVEL = 1305;
 
+    public static final int ADD_ADMIN_DEVICE = 1306;
+    public static final int ADD_AUTHOR_DEVICE = 1307;
+    public static final int ADD_INSTRUCTOR_DEVICE = 1308;
+    public static final int ADD_TRAINEE_DEVICE = 1309;
+
     private List<Integer> IDs;
     private List<Integer> priorityFlags;
 

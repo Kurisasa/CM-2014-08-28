@@ -1,5 +1,4 @@
 package com.boha.cmadmin;
-import java.io.UnsupportedEncodingException;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +18,13 @@ import com.boha.coursemaker.base.BaseRegistration;
 import com.boha.coursemaker.dto.AdministratorDTO;
 import com.boha.coursemaker.dto.CompanyDTO;
 import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
+
+import java.util.Locale;
 
 public class RegistrationActivity extends BaseRegistration {
 
@@ -74,13 +78,7 @@ public class RegistrationActivity extends BaseRegistration {
 					"Please select nearest city");
 			return;
 		}
-		
-		//check provinces
-		if (provinceList == null || provinceList.size() == 0) {
-			getCountryList();
-			ToastUtil.toast(ctx, ctx.getResources().getString(R.string.province_data_loading));
-			return;
-		}
+
 		company = new CompanyDTO();
 		company.setCompanyName(editCompanyName.getText().toString());
 		company.setEmail(email);
@@ -93,14 +91,57 @@ public class RegistrationActivity extends BaseRegistration {
 		administrator.setPassword(editPassword.getText().toString());
 		administrator.setCellphone(editCellphone.getText().toString());
 
-		type = RequestDTO.REGISTER_TRAINING_COMPANY;
-		try {
-			btnNew.setVisibility(View.GONE);
-			Log.i(LOG, "...about to getRemoteData");
-			getRemoteData(type, Statics.SERVLET_ADMIN);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		type = RequestDTO.REGISTER_TRAINING_COMPANY;
+//		try {
+//			btnNew.setVisibility(View.GONE);
+//			Log.i(LOG, "..............about to getRemoteData via websocket");
+//			getRemoteData(type, Statics.ADMIN_ENDPOINT);
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.REGISTER_TRAINING_COMPANY);
+        w.setCompany(company);
+        w.setAdministrator(administrator);
+        w.setCountryCode(Locale.getDefault().getCountry());
+        w.setGcmDevice(gcmDevice);
+
+        WebSocketUtil.sendRequest(ctx,Statics.ADMIN_ENDPOINT,w,new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx,response.getMessage());
+                            return;
+                        }
+                        SharedUtil.saveAdmin(ctx,response.getAdministrator());
+                        if (response.getCompany() != null) {
+                            SharedUtil.saveCompany(ctx, response.getCompany());
+                        }
+                        sendDeviceToServer(BaseRegistration.ADMINISTRATOR, response.getAdministrator().getAdministratorID());
+                        startMain();
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.errorToast(ctx,message);
+                        //TODO - delete gcm reg id
+                    }
+                });
+            }
+        });
 		
 		
 
@@ -116,12 +157,52 @@ public class RegistrationActivity extends BaseRegistration {
 		password = editPassword.getText().toString();
 		type = RequestDTO.LOGIN_ADMINISTRATOR;
 
-		try {
-			btnLogin.setVisibility(View.GONE);
-			getRemoteData(type, Statics.SERVLET_ADMIN);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			btnLogin.setVisibility(View.GONE);
+//			getRemoteData(type, Statics.ADMIN_ENDPOINT);
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.LOGIN_ADMINISTRATOR);
+        w.setCountryCode(Locale.getDefault().getCountry());
+        w.setEmail(email);
+        w.setPassword(password);
+        w.setGcmDevice(gcmDevice);
+
+        WebSocketUtil.sendRequest(ctx, Statics.ADMIN_ENDPOINT,w,new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx,response.getMessage());
+                            return;
+                        }
+                        SharedUtil.saveCompany(ctx,response.getCompany());
+                        SharedUtil.saveAdmin(ctx,response.getAdministrator());
+                        sendDeviceToServer(BaseRegistration.ADMINISTRATOR, response.getAdministrator().getAdministratorID());
+                        startMain();
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.errorToast(ctx,message);
+                    }
+                });
+            }
+        });
 	}
 
 	Button btnNew, btnLogin;
@@ -217,7 +298,7 @@ public class RegistrationActivity extends BaseRegistration {
 			startActivity(i);
 			return true;
 		case R.id.menu_refresh:
-			getCountryList();
+
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

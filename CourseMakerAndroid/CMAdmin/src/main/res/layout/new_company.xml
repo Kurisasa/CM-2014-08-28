@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp" >
+    android:padding="10dp" >
 
     <TextView
-        style="@style/Title2TextStyleBlack"
+        style="@style/Title3TextStyleBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_company_instruction" />

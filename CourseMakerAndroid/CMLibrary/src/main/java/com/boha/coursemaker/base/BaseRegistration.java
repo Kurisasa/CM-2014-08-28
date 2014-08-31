@@ -4,7 +4,7 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
 import android.location.Location;
-import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -19,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.boha.cmlibrary.R;
 import com.boha.coursemaker.dto.AdministratorDTO;
@@ -33,6 +34,7 @@ import com.boha.coursemaker.dto.ResponseDTO;
 import com.boha.coursemaker.dto.TraineeDTO;
 import com.boha.coursemaker.dto.TrainingClassDTO;
 import com.boha.coursemaker.listeners.GCMUtilListener;
+import com.boha.coursemaker.util.CacheUtil;
 import com.boha.coursemaker.util.GCMUtil;
 import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
@@ -126,20 +128,7 @@ public abstract class BaseRegistration extends FragmentActivity implements
 		getEmail();
 		registerDevice();
 
-		if (checkType == ADMINISTRATOR) {
-			getCountryList();
-		}
 
-	}
-
-	protected void getCountryList() {
-		type = RequestDTO.GET_COUNTRY_LIST;
-		setBusy();
-		try {
-			getRemoteData(type, Statics.SERVLET_ADMIN);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -158,12 +147,91 @@ public abstract class BaseRegistration extends FragmentActivity implements
 				Log.w(LOG, "onDeviceRegistered - stored in variable: " + regID);
 				gcmDevice = new GcmDeviceDTO();
 				gcmDevice.setRegistrationID(gcmRegistrationID);
+                gcmDevice.setManufacturer(Build.MANUFACTURER);
+                gcmDevice.setModel(Build.MODEL);
+                gcmDevice.setProduct(Build.VERSION.RELEASE);
+
+                getProvinces();
+
 
 			}
 		});
 	}
 
+    public void sendDeviceToServer(int type, int id) {
+        RequestDTO w = new RequestDTO();
+
+        switch (type) {
+            case ADMINISTRATOR:
+                w.setRequestType(RequestDTO.ADD_ADMIN_DEVICE);
+                w.setAdministratorID(id);
+                break;
+            case AUTHOR:
+                w.setRequestType(RequestDTO.ADD_AUTHOR_DEVICE);
+                w.setAuthorID(id);
+                break;
+            case INSTRUCTOR:
+                w.setRequestType(RequestDTO.ADD_INSTRUCTOR_DEVICE);
+                w.setInstructorID(id);
+                break;
+            case TRAINEE:
+                w.setRequestType(RequestDTO.ADD_TRAINEE_DEVICE);
+                w.setTraineeID(id);
+                break;
+        }
+        w.setGcmDevice(gcmDevice);
+
+        BaseVolley.getRemoteData(Statics.SERVLET_ADMIN,w,ctx,new BaseVolley.BohaVolleyListener() {
+            @Override
+            public void onResponseReceived(ResponseDTO response) {
+                if (response.getStatusCode() > 0) {
+                    ToastUtil.errorToast(ctx,response.getMessage());
+                    return;
+                }
+                Log.i(LOG,"################### Device loaded on server");
+            }
+
+            @Override
+            public void onVolleyError(VolleyError error) {
+
+            }
+        });
+
+    }
 	private int mType;
+    private void getProvinces() {
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.GET_COUNTRY_LIST);
+        w.setCountryCode(Locale.getDefault().getCountry());
+
+        BaseVolley.getRemoteData(Statics.SERVLET_ADMIN, w, ctx, new BaseVolley.BohaVolleyListener() {
+            @Override
+            public void onResponseReceived(ResponseDTO r) {
+                if (r.getStatusCode() > 0) {
+                    ToastUtil.errorToast(ctx,r.getMessage());
+                    return;
+                }
+                response = r;
+                setProvinceSpinner();
+                CacheUtil.cacheData(ctx,response, CacheUtil.CACHE_PROVINCES,new CacheUtil.CacheUtilListener() {
+                    @Override
+                    public void onFileDataDeserialized(ResponseDTO response) {
+
+                    }
+
+                    @Override
+                    public void onDataCached() {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onVolleyError(VolleyError error) {
+
+            }
+        });
+    }
 
 	/**
 	 * Call via Https to server to get registration related data
@@ -176,60 +244,61 @@ public abstract class BaseRegistration extends FragmentActivity implements
 	 */
 	public void getRemoteData(int type, String suffix)
 			throws UnsupportedEncodingException {
-		Log.d(LOG, "....getRemoteData ...type: " + type + " -- " + LOG);
-		this.mType = type;
-		RequestDTO request = new RequestDTO();
-		request.setRequestType(type);
-		//
-		
-		switch (type) {
-		case RequestDTO.GET_COUNTRY_LIST:
-			String countryCode = Locale.getDefault().getCountry();
-			Log.i(LOG, "Country code is " + countryCode);
-			request.setCountryCode(countryCode);
-			
-			break;
-		case RequestDTO.REGISTER_ADMINISTRATOR:
-			request.setAdministrator(administrator);
-			break;
-		case RequestDTO.LOGIN_ADMINISTRATOR:
-			request.setEmail(email);
-			request.setPassword(password);
-			request.setGcmDevice(gcmDevice);
-			break;
-		case RequestDTO.REGISTER_TRAINING_COMPANY:
-			request.setCompany(company);
-			request.setAdministrator(administrator);
-			break;
-		case RequestDTO.REGISTER_AUTHOR:
-			request = AuthorUtil.registerAuthor(ctx, author,
-					author.getCompanyID());
-			break;
-		case RequestDTO.LOGIN_AUTHOR:
-			request = AuthorUtil.loginAuthor(ctx, email, password);
-			request.setGcmDevice(gcmDevice);
-			break;
-		case RequestDTO.REGISTER_TRAINEE:
-			request = TraineeUtil.registerTrainee(ctx, trainee,
-					trainingClassID, city.getCityID());
-			break;
-		case RequestDTO.LOGIN_TRAINEE:
-			request = TraineeUtil.loginTrainee(ctx, email, password);
-			request.setGcmDevice(gcmDevice);
-			break;
-		case RequestDTO.REGISTER_INSTRUCTOR:
-			request = InstructorUtil.registerInstructor(ctx, instructor);
-			break;
-		case RequestDTO.LOGIN_INSTRUCTOR:
-			request = InstructorUtil.loginInstructor(ctx, email, password);
-			request.setGcmDevice(gcmDevice);
-			break;
-		default:
-			break;
-		}
-		if (!BaseVolley.checkNetworkOnDevice(ctx)) return;
+        Log.d(LOG, "....getRemoteData ...type: " + type + " - suffix: " + suffix);
+        this.mType = type;
+        RequestDTO request = new RequestDTO();
+        request.setRequestType(type);
+        //
 
-		setBusy();
+        switch (type) {
+            case RequestDTO.GET_COUNTRY_LIST:
+                String countryCode = Locale.getDefault().getCountry();
+                Log.i(LOG, "Country code is " + countryCode);
+                request.setCountryCode(countryCode);
+
+                break;
+            case RequestDTO.REGISTER_ADMINISTRATOR:
+                request.setAdministrator(administrator);
+                break;
+            case RequestDTO.LOGIN_ADMINISTRATOR:
+                request.setEmail(email);
+                request.setPassword(password);
+                request.setGcmDevice(gcmDevice);
+                break;
+            case RequestDTO.REGISTER_TRAINING_COMPANY:
+                request.setCompany(company);
+                request.setAdministrator(administrator);
+                break;
+            case RequestDTO.REGISTER_AUTHOR:
+                request = AuthorUtil.registerAuthor(ctx, author,
+                        author.getCompanyID());
+                break;
+            case RequestDTO.LOGIN_AUTHOR:
+                request = AuthorUtil.loginAuthor(ctx, email, password);
+                request.setGcmDevice(gcmDevice);
+                break;
+            case RequestDTO.REGISTER_TRAINEE:
+                request = TraineeUtil.registerTrainee(ctx, trainee,
+                        trainingClassID, city.getCityID());
+                break;
+            case RequestDTO.LOGIN_TRAINEE:
+                request = TraineeUtil.loginTrainee(ctx, email, password);
+                request.setGcmDevice(gcmDevice);
+                break;
+            case RequestDTO.REGISTER_INSTRUCTOR:
+                request = InstructorUtil.registerInstructor(ctx, instructor);
+                break;
+            case RequestDTO.LOGIN_INSTRUCTOR:
+                request = InstructorUtil.loginInstructor(ctx, email, password);
+                request.setGcmDevice(gcmDevice);
+                break;
+            default:
+                break;
+        }
+        if (!BaseVolley.checkNetworkOnDevice(ctx)) return;
+
+        setBusy();
+        Log.e(LOG, "$$$$$ suffix: " + suffix + " requestType: " + request.getRequestType());
         WebSocketUtil.sendRequest(ctx, suffix, request, new WebSocketUtil.WebSocketListener() {
             @Override
             public void onMessage(final ResponseDTO r) {
@@ -255,7 +324,6 @@ public abstract class BaseRegistration extends FragmentActivity implements
                             return;
                         }
                         savePrefs();
-                        new LocalTask().execute();
                         processRemoteResponse();
                     }
                 });
@@ -276,6 +344,7 @@ public abstract class BaseRegistration extends FragmentActivity implements
                 });
             }
         });
+    }
 //		BaseVolley.getRemoteData(suffix, request, ctx,
 //				new BohaVolleyListener() {
 //
@@ -329,15 +398,8 @@ public abstract class BaseRegistration extends FragmentActivity implements
 //					}
 //				});
 
-	}
-	class LocalTask extends AsyncTask<Void, Void, Void> {
 
-		@Override
-		protected Void doInBackground(Void... params) {
-			return null;
-		}
-		
-	}
+
 
 	private void savePrefs() {
 		if (response.getCompany() != null) {
@@ -585,4 +647,5 @@ public abstract class BaseRegistration extends FragmentActivity implements
 	protected String gcmRegistrationID;
 	protected int trainingClassID, cityID;
 	protected GcmDeviceDTO gcmDevice;
+
 }

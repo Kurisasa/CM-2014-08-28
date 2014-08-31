@@ -1,9 +1,5 @@
 package com.boha.cmtrainee;
 
-import com.boha.cmtrainee.fragments.TraineeProfileFragment;
-import com.boha.cmtrainee.interfaces.ImageCaptureListener;
-import com.boha.coursemaker.listeners.BusyListener;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +7,17 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.boha.cmtrainee.fragments.TraineeProfileFragment;
+import com.boha.cmtrainee.interfaces.ImageCaptureListener;
+import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.listeners.BusyListener;
+import com.boha.coursemaker.util.Statics;
+import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
+
+import java.util.Locale;
 
 public class TraineeProfileActivity extends FragmentActivity implements BusyListener,
 ImageCaptureListener{
@@ -49,8 +56,47 @@ ImageCaptureListener{
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.profile, menu);
 		mMenu = menu;
+        getProvinceList();
 		return true;
 	}
+    private void getProvinceList() {
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.GET_COUNTRY_LIST);
+        w.setCountryCode(Locale.getDefault().getCountry());
+        Log.w(TraineeProfileActivity.class.getName(), "############ Country Code is: " + w.getCountryCode());
+
+        WebSocketUtil.sendRequest(ctx, Statics.TRAINEE_ENDPOINT,w,new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx,response.getMessage());
+                            return;
+                        }
+                        traineeProfileFragment.setCountryData(response);
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.errorToast(ctx,message);
+                    }
+                });
+            }
+        });
+
+    }
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

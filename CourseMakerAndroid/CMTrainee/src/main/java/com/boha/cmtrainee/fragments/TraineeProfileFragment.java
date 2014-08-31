@@ -104,7 +104,7 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
             provinceList = r.getProvinceList();
             setProvinceSpinner();
             isFirstTime = true;
-            loadForm();
+
         }
 
         Animation an = AnimationUtils.loadAnimation(ctx, R.anim.grow_fade_in);
@@ -456,6 +456,7 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
             }
         });
 
+        loadForm();
         if (trainee.getGender() == 1)
             radioMale.setChecked(true);
 
@@ -524,7 +525,7 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
         return -1;
     }
 
-    private int getProvinceIndex(Integer id) {
+    private int getProvinceIndex(int id) {
         int cnt = 0;
         if (provinceList == null)
             return 0;
@@ -565,9 +566,6 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
         pictureChanged = true;
     }
 
-    public void setmImageLoader(ImageLoader mImageLoader) {
-        this.imageLoader = mImageLoader;
-    }
 
     void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) ctx
@@ -576,8 +574,12 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
         imm.hideSoftInputFromWindow(editIDNumber.getWindowToken(), 0);
     }
 
-    private boolean isFirstTime;
+    private boolean isFirstTime = true;
 
+    public void setCountryData(ResponseDTO resp) {
+        provinceList = resp.getProvinceList();
+        setProvinceSpinner();
+    }
     private void setProvinceSpinner() {
         Log.d(LOG, "setting provinceSpinner ...");
         if (provinceSpinner == null) {
@@ -616,6 +618,13 @@ public class TraineeProfileFragment extends Fragment implements PageInterface {
 
                         }
                     });
+            if (isFirstTime) {
+                int index = getProvinceIndex(trainee.getProvinceID());
+                if (index > -1) {
+                    provinceSpinner.setSelection(index + 1);
+                }
+
+            }
         }
 
     }

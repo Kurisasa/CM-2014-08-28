@@ -169,6 +169,7 @@ public class SharedUtil {
 		Editor ed = sp.edit();
 		ed.putString(Constants.COMPANY_JSON, x);
 		ed.commit();
+        Log.w("SharedUtil", "Company saved in prefs: " + dto.getCompanyName());
 	}
 
 	public static AuthorDTO getAuthor(Context ctx) {
@@ -289,6 +290,7 @@ public class SharedUtil {
 		Editor ed = sp.edit();
 		ed.putString(Constants.TRAINEE_JSON, x);
 		ed.commit();
+        Log.w("SharedUtil", "Trainee saved in prefs: " + dto.getFullName());
 	}
 
 	public static void saveAuthor(Context ctx, AuthorDTO dto) {

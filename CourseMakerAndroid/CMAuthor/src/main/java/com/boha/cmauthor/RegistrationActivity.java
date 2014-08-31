@@ -1,7 +1,5 @@
 package com.boha.cmauthor;
 
-import java.io.UnsupportedEncodingException;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -16,8 +14,11 @@ import android.widget.Spinner;
 
 import com.boha.coursemaker.base.BaseRegistration;
 import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
+import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
 
 public class RegistrationActivity extends BaseRegistration {
 
@@ -55,12 +56,51 @@ public class RegistrationActivity extends BaseRegistration {
 			return;
 		}
 		password = editPassword.getText().toString();
-		type = RequestDTO.LOGIN_AUTHOR;
-		try {
-			getRemoteData(type, Statics.SERVLET_AUTHOR);
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+//		type = RequestDTO.LOGIN_AUTHOR;
+//		try {
+//			getRemoteData(type, Statics.SERVLET_AUTHOR);
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+
+        RequestDTO w = new RequestDTO();
+        w.setRequestType(RequestDTO.LOGIN_AUTHOR);
+        w.setEmail(email);
+        w.setPassword(password);
+
+        WebSocketUtil.sendRequest(ctx, Statics.AUTHOR_ENDPOINT, w, new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(final ResponseDTO response) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx, response.getMessage());
+                            return;
+                        }
+                        SharedUtil.saveCompany(ctx, response.getCompany());
+                        SharedUtil.saveAuthor(ctx, response.getAuthor());
+                        sendDeviceToServer(BaseRegistration.AUTHOR, response.getAuthor().getAuthorID());
+                        startMain();
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ToastUtil.errorToast(ctx, message);
+                    }
+                });
+            }
+        });
 	}
 
 	@Override

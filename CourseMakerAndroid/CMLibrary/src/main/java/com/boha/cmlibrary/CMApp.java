@@ -10,12 +10,15 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.boha.coursemaker.util.Statics;
 import com.boha.volley.toolbox.BitmapLruCache;
+import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.annotation.ReportsCrashes;
+
+import java.io.File;
 
 /**
  * Created by aubreyM on 2014/07/02.
@@ -31,18 +34,33 @@ import org.acra.annotation.ReportsCrashes;
         socketTimeout = 3000
 )
 public class CMApp extends Application implements Thread.UncaughtExceptionHandler {
+    static Context ctx;
+    static ImageLoaderConfiguration config;
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(LOG, "############################ onCreate CMApp has started ---------------->");
+        ctx = getApplicationContext();
 
         ACRA.init(this);
         Log.e(LOG, "###### ACRA Crash Reporting has been initiated");
         initializeVolley(getApplicationContext());
+        File cacheDir = getCacheDir();
 
-
+        config = new ImageLoaderConfiguration.Builder(ctx)
+                .memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024))
+                .build();
 
     }
+
+    public static final DisplayImageOptions options = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.ic_action_add_person) // resource or drawable
+            .showImageForEmptyUri(R.drawable.boy) // resource or drawable
+            .showImageOnFail(R.drawable.boy) // resource or drawable
+            .resetViewBeforeLoading(false)  // default
+            .cacheInMemory(true) // default
+            .cacheOnDisk(true) // default
+            .build();
     public void initializeVolley(Context context) {
         requestQueue = Volley.newRequestQueue(context);
         int memClass = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))

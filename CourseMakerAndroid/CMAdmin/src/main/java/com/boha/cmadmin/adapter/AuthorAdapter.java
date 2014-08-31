@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
+
 import com.boha.cmadmin.R;
 import com.boha.coursemaker.dto.AuthorDTO;
 import com.boha.coursemaker.util.Statics;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
@@ -25,15 +27,13 @@ public class AuthorAdapter extends ArrayAdapter<AuthorDTO> {
 	private List<AuthorDTO> mList;
 	private Context ctx;
 
-	private ImageLoader imageLoader;
 
 	public AuthorAdapter(Context context, int textViewResourceId,
-			List<AuthorDTO> list, ImageLoader imageLoader) {
+			List<AuthorDTO> list) {
 		super(context, textViewResourceId, list);
 		this.mLayoutRes = textViewResourceId;
 		mList = list;
 		ctx = context;
-		this.imageLoader = imageLoader;
 		this.mInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
@@ -43,7 +43,7 @@ public class AuthorAdapter extends ArrayAdapter<AuthorDTO> {
 	static class ViewHolderItem {
 		TextView txtName;
 		TextView txtEmail, txtCity, txtCount;
-		NetworkImageView image;
+		ImageView image;
 	}
 
 	@Override
@@ -62,7 +62,7 @@ public class AuthorAdapter extends ArrayAdapter<AuthorDTO> {
 			v.txtCount = (TextView) convertView
 					.findViewById(R.id.TR_ITEM_courseCount);
 
-			v.image = (NetworkImageView) convertView
+			v.image = (ImageView) convertView
 					.findViewById(R.id.TR_ITEM_image);
 			convertView.setTag(v);
 		} else {
@@ -89,8 +89,9 @@ public class AuthorAdapter extends ArrayAdapter<AuthorDTO> {
 		sb.append(Statics.IMAGE_URL).append("company")
 				.append(author.getCompanyID()).append("/author/");
 		sb.append(author.getAuthorID()).append(".jpg");
-		v.image.setDefaultImageResId(R.drawable.boy);
-		v.image.setImageUrl(sb.toString(), imageLoader);
+        ImageLoader.getInstance().displayImage(sb.toString(), v.image, options);
+		//v.image.setDefaultImageResId(R.drawable.boy);
+		//v.image.setImageUrl(sb.toString(), imageLoader);
 
 		Statics.setRobotoFontRegular(ctx, v.txtName);
 
@@ -113,5 +114,13 @@ public class AuthorAdapter extends ArrayAdapter<AuthorDTO> {
 			return;
 		view.startAnimation(a);
 	}
+    public static final DisplayImageOptions options = new DisplayImageOptions.Builder()
+            .showImageOnLoading(com.boha.cmlibrary.R.drawable.ic_action_add_person) // resource or drawable
+            .showImageForEmptyUri(com.boha.cmlibrary.R.drawable.boy) // resource or drawable
+            .showImageOnFail(com.boha.cmlibrary.R.drawable.boy) // resource or drawable
+            .resetViewBeforeLoading(false)  // default
+            .cacheInMemory(true) // default
+            .cacheOnDisk(true) // default
+            .build();
 
 }

@@ -24,7 +24,7 @@ public class TimerUtil {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Log.e("TimerUtil", "########## about to disconnect websocket session");
+                Log.w("TimerUtil", "########## about to disconnect websocket session");
                 WebSocketUtil.disconnectSession();
                 listener.onSessionDisconnected();
             }

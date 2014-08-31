@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
@@ -282,16 +281,9 @@ public class EquipmentListFragment extends Fragment implements PageInterface {
 
 
 	private void setList() {
-		if (getActivity() == null) {
-			Log.e(LOG, "Context is NULL. Somethin weird going down ...");
-			return;
-		}
 		adapter = new EquipmentAdapter(getActivity(), R.layout.equipment_item,
 				equipmentList);
-		if (equipmentList == null) {
-			Log.w(LOG, "setList - list is NULL");
-			return;
-		}
+
 		txtCount.setText("" + equipmentList.size());
 		listView.setAdapter(adapter);
 		listView.setDividerHeight(2);
